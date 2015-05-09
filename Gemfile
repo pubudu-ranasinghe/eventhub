@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'haml', '~> 4.0.6'
 gem 'paperclip', '~> 4.2.1'
+gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

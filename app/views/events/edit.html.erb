@@ -1,6 +1,14 @@
 <h1>Editing Event</h1>
 
-<%= render 'form' %>
+<div class="row">
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+  <%= render 'form' %>
+
+</div>
+
+<div class="row">
+
+  <%= link_to 'Show', @event, class: 'btn btn-default' %> |
+  <%= link_to 'Back', events_path, class: 'btn btn-default' %>
+
+</div>

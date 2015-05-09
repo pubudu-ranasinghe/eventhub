@@ -1,16 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+  <h1><%= @event.title %></h1>
+  <%= image_tag @event.cover.url(:hero) %>
+  <p>
+    <%= @event.description %>
+  </p>
 
-<%= image_tag @event.cover.url(:hero) %>
+  <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default' %>
+  <%= link_to 'Back', events_path, class: 'btn btn-default' %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+</div>
