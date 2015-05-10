@@ -34,7 +34,7 @@
 
   <div class="form-group col-md-3">
     <%= f.label :start_time %><br>
-    <%= f.text_field :start_time, class: 'form-control start-timepicker' %>
+    <%= f.text_field :start_time, value: format_time_field(@event.start_time), class: 'form-control start-timepicker' %>
   </div>
 
   <div class="form-group col-md-3">
@@ -44,7 +44,7 @@
 
   <div class="form-group col-md-3">
     <%= f.label :end_time %><br>
-    <%= f.text_field :end_time, class: 'form-control end-timepicker' %>
+    <%= f.text_field :end_time, value: format_time_field(@event.end_time), class: 'form-control end-timepicker' %>
   </div>
 
   <div class="actions form-group col-md-12">
