@@ -2,15 +2,13 @@
 
   <h1><%= @event.title %></h1>
   <%= image_tag @event.cover.url(:hero) %>
-  <h3>From <%= @event.start_date.strftime("%Y %b %d") %>
-           <%= @event.start_time.strftime("%I:%M%p") %>
-  </h3>
-  <h3>To <%= @event.end_date.strftime("%Y %b %d") %>
-         <%= @event.end_time.strftime("%I:%M%p") %>
-  </h3>
+
+  <%= print_event_date %>
+  
   <p>
     <%= @event.description %>
   </p>
+
   <% if @event.user == current_user %>
     <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default' %>
   <% end %>
