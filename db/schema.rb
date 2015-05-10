@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509104922) do
+ActiveRecord::Schema.define(version: 20150509161349) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 20150509104922) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.date     "start_date"
+    t.time     "start_time"
+    t.date     "end_date"
+    t.time     "end_time"
   end
 
 end

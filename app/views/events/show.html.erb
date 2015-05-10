@@ -1,8 +1,14 @@
 <div class="row">
-  <p id="notice"><%= notice %></p>
+  <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
 
   <h1><%= @event.title %></h1>
   <%= image_tag @event.cover.url(:hero) %>
+  <h3>From <%= @event.start_date.strftime("%Y %b %d") %>
+           <%= @event.start_time.strftime("%I:%M%p") %>
+  </h3>
+  <h3>To <%= @event.end_date.strftime("%Y %b %d") %>
+         <%= @event.end_time.strftime("%I:%M%p") %>
+  </h3>
   <p>
     <%= @event.description %>
   </p>

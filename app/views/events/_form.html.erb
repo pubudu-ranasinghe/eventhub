@@ -1,3 +1,5 @@
+<div class="row">
+
 <%= form_for @event, :html => { :multipart => true } do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -11,19 +13,54 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group col-md-12">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-md-12">
     <%= f.label :description %><br>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-md-12">
     <%= f.label :cover %><br>
     <%= f.file_field :cover %>
   </div>
-  <div class="actions">
+
+
+  <div class="form-group col-md-3">
+    <%= f.label :start_date %><br>
+    <%= f.text_field :start_date, class: 'form-control start-datepicker' %>
+  </div>
+
+  <div class="form-group col-md-3">
+    <%= f.label :start_time %><br>
+    <%= f.text_field :start_time, class: 'form-control start-timepicker' %>
+  </div>
+
+  <div class="form-group col-md-3">
+    <%= f.label :end_date %><br>
+    <%= f.text_field :end_date, class: 'form-control end-datepicker' %>
+  </div>
+
+  <div class="form-group col-md-3">
+    <%= f.label :end_time %><br>
+    <%= f.text_field :end_time, class: 'form-control end-timepicker' %>
+  </div>
+
+  <div class="actions form-group col-md-12">
     <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+</div>
+
+<script type="text/javascript">
+$('.start-datepicker').pickadate({
+  format: 'yyyy-mm-dd',
+});
+$('.end-datepicker').pickadate({
+  format: 'yyyy-mm-dd',
+});
+$('.start-timepicker').pickatime();
+$('.end-timepicker').pickatime();
+</script>
