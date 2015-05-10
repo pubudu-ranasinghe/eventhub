@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml', '~> 4.0.6'
 gem 'paperclip', '~> 4.2.1'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'devise'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -22,4 +23,9 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
 end
