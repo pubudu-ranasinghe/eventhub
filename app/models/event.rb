@@ -11,4 +11,6 @@ class Event < ActiveRecord::Base
   validates :cover, presence: true
 
   belongs_to :user
+
+  self.per_page = 3
 end
