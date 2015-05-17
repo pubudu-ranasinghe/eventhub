@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = current_user.events.new(event_params)
+    @event = current_user.created_events.new(event_params)
 
     respond_to do |format|
       if @event.save
@@ -76,7 +76,7 @@ class EventsController < ApplicationController
     # check authorized user for edits update delete
     def authorized_user
       @event = Event.find(params[:id])
-      if @event.user_id != current_user.id
+      if @event.creator_id != current_user.id
         redirect_to root_path, notice: "Oops! You don't have permission to do that"
       end
     end

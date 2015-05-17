@@ -10,7 +10,13 @@ class Event < ActiveRecord::Base
   validates :end_time, presence: true
   validates :cover, presence: true
 
+  # belongs_to :user
+
   belongs_to :user
+  has_many :registrations
+  has_many :users, :through => :registrations
+
+  belongs_to :creator, :class_name => "User", :foreign_key => :creator_id
 
   self.per_page = 3
 end

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :events
+  resources :events do
+    resources :registrations
+  end
 
   root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.

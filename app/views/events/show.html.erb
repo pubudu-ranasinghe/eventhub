@@ -1,15 +1,18 @@
 <div class="row">
 
   <h1><%= @event.title %></h1>
+  <% @event.users.each do |u| %>
+    <h3><%= u.email %></h3>
+  <% end %>
   <%= image_tag @event.cover.url(:hero) %>
 
   <%= print_event_date %>
-  
+
   <p>
     <%= @event.description %>
   </p>
-
-  <% if @event.user == current_user %>
+  <%= link_to 'Register', new_event_registration_path(@event), class: 'btn btn-primary' %>
+  <% if @event.creator == current_user %>
     <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default' %>
   <% end %>
 </div>
