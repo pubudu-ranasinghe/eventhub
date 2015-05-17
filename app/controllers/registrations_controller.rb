@@ -3,11 +3,10 @@ class RegistrationsController < ApplicationController
 
   def new
     @event = Event.find(params[:event_id])
-    if @event.registrations.where(user_id: current_user.id).any?
+    if @event.registrations.where(user: current_user).any?
       redirect_to @event, notice: 'Already registered'
     else
-      @reg = Registration.new(user_id: current_user.id, event_id: @event.id)
-      @reg.save
+      @event.registrations.create(user: current_user)
       redirect_to @event, notice: 'Successfully registered'
     end
   end

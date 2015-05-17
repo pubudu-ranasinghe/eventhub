@@ -2,7 +2,7 @@
 
   <h1><%= @event.title %></h1>
   <% @event.users.each do |u| %>
-    <h3><%= u.email %></h3>
+    <h3><%= u.name %></h3>
   <% end %>
   <%= image_tag @event.cover.url(:hero) %>
 
@@ -11,7 +11,8 @@
   <p>
     <%= @event.description %>
   </p>
-  <%= link_to 'Register', new_event_registration_path(@event), class: 'btn btn-primary' %>
+  <%= registered_check(@event) %>
+  <!-- <%= link_to 'Register', new_event_registration_path(@event), class: 'btn btn-primary' %> -->
   <% if @event.creator == current_user %>
     <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default' %>
   <% end %>
