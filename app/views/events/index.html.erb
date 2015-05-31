@@ -1,24 +1,41 @@
-<div class="row">
+<div class="container-fluid hero-container">
+  <div class="cover">
+  <div class="cover-img"></div>
+  <div class="cover-text">
+    <h2>Create Awesome Events</h2>
+    <h3>Sell your tickets online. Profit!</h3>
+  </div>
+  </div>
+</div>
 
-  <div class="jumbotron">
-    <h1>Create awesome event pages with Eventhub!</h1>
-    <p>Get started now</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Create Event</a></p>
+<div class="container post-grid">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Discover What's Happening</h3>
+    </div>
+  </div>
+  <div class="row">
+
+    <% @events.each do |event| %>
+    <div class="col-md-3 card-container">
+      <div class="card">
+        <%= link_to '', event %>
+        <h2><%= event.title %></h2>
+        <!-- <div class="card-img"></div> -->
+        <%= image_tag event.cover.url(:thumb) %>
+        <div class="card-meta">
+          <!-- <p><%= event.description %></p> -->
+          <p class="date"><i class="fa fa-clock-o fa-fw"></i><%= event.start_date.strftime("%b %d") %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
   </div>
 
-  <% @events.each do |event| %>
-  <div class="col-md-4">
-    <h1><%= event.title %></h1>
-    <%= image_tag event.cover.url(:thumb) %>
-    <p><%= event.description %></p>
-    <%= link_to 'More', event, class: 'btn btn-default' %>
+  <div class="row text-center">
+    <%= will_paginate %>
   </div>
-  <% end %>
-
-
-
-</div>
-<div class="row">
-  <%= will_paginate %>
-</div>
 <!-- <%= link_to 'New Event', new_event_path %> -->
+</div>

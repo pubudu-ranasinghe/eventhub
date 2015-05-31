@@ -1,14 +1,27 @@
-<h1>Editing Event</h1>
+<div class="container">
+  <div class="row">
 
-<div class="row">
+    <h1>Edit Event : <%= @event.title %></h1>
 
-  <%= render 'form' %>
+    <div class="row">
+      <div class="col-md-12">
 
-</div>
+        <%= render 'form' %>
 
-<div class="row">
+      </div>
 
-  <%= link_to 'Show', @event, class: 'btn btn-default' %> |
-  <%= link_to 'Back', events_path, class: 'btn btn-default' %>
+    </div>
 
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <%= link_to 'View', @event, class: 'btn btn-default' %>
+        <%= link_to 'Cancel', events_path, class: 'btn btn-default' %>
+
+      </div>
+
+    </div>
+
+  </div>
 </div>

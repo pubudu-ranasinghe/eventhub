@@ -1,19 +1,54 @@
-<div class="row">
+<div class="container event-full">
 
-  <h1><%= @event.title %></h1>
-  <% @event.users.each do |u| %>
-    <h3><%= u.name %></h3>
-  <% end %>
-  <%= image_tag @event.cover.url(:hero) %>
+  <div class="row">
 
-  <%= print_event_date %>
+    <div class="col-md-12">
 
-  <p>
-    <%= @event.description %>
-  </p>
-  <%= registered_check(@event) %>
-  <!-- <%= link_to 'Register', new_event_registration_path(@event), class: 'btn btn-primary' %> -->
-  <% if @event.creator == current_user %>
-    <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default' %>
-  <% end %>
+      <div class="event-cover">
+        <%= image_tag @event.cover.url(:hero), class: 'img-responsive' %>
+        <div class="cover-head">
+          <h1><%= @event.title %></h1>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row event-meta">
+    <div class="col-md-8">
+      <h4><i class="fa fa-clock-o fa-fw"></i><%= print_event_date %></h4>
+    </div>
+    <div class="col-md-4">
+      <%= registered_check(@event) %>
+    </div>
+  </div>
+
+  <div class="row event-body">
+    <div class="col-md-8">
+
+      <div class="event-desc">
+
+        <%= simple_format(@event.description) %>
+
+      </div>
+      <!-- <%= link_to 'Register', new_event_registration_path(@event), class: 'btn btn-primary' %> -->
+      <% if @event.creator == current_user %>
+        <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default' %>
+      <% end %>
+
+    </div>
+
+    <div class="col-md-4">
+      <h5>People attending this event</h5>
+      <ul>
+
+        <% @event.users.each do |u| %>
+          <li><%= u.name %></li>
+        <% end %>
+
+      </ul>
+    </div>
+
+    </div>
+
 </div>

@@ -10,9 +10,9 @@ module EventsHelper
     e_time = @event.end_time.strftime("%I:%M%p")
 
     if @event.start_date == @event.end_date
-      content_tag(:h3, "#{s_date} from #{s_time} to #{e_time}")
+      return " #{s_date} from #{s_time} to #{e_time}"
     else
-      content_tag(:h3, "#{s_date} - #{s_time} to #{e_date} - #{e_time}")
+      return "#{s_date} - #{s_time} to #{e_date} - #{e_time}"
     end
   end
 end
