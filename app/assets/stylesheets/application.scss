@@ -19,3 +19,9 @@
  @import "default.date";
  @import "default";
  @import "default.time";
+
+ $nprogress-color: #e74c3c;
+ $nprogress-zindex: 10100;
+
+ @import 'nprogress';
+ @import 'nprogress-bootstrap';

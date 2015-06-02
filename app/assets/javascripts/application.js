@@ -10,11 +10,15 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// Picker is referenced here to load it before loading date and time scripts 
+// Picker is referenced here to load it before loading date and time scripts
 //
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require picker
+
+//= require nprogress
+//= require nprogress-turbolinks
+
 //= require_tree .
