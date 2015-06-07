@@ -18,5 +18,8 @@ class Event < ActiveRecord::Base
 
   belongs_to :creator, :class_name => "User", :foreign_key => :creator_id
 
+  # category
+  belongs_to :category
+
   self.per_page = 6
 end
