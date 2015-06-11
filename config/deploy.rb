@@ -7,7 +7,7 @@ lock '3.4.0'
 server '128.199.105.149', port: 9923, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@bitbucket.org:pubudutr/eventhub.git'
-set :application,     'Eventhub'
+set :application,     'eventhub'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
