@@ -23,7 +23,7 @@ test:
 production:
   <<: *default
   encoding: unicode
-  database: eventhub_production
+  database: eventhubdb
   pool: 5
-  username: eventhubdb
+  username: deploy
   password: weareeventhub9923
