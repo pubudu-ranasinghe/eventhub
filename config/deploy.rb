@@ -4,7 +4,7 @@ lock '3.4.0'
 # set :application, 'my_app_name'
 # set :repo_url, 'git@example.com:me/my_repo.git'
 
-server '128.199.105.149', port: 9923, roles: [:web, :app, :db], primary: true
+server '128.199.105.149', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@bitbucket.org:pubudutr/eventhub.git'
 set :application,     'eventhub'
