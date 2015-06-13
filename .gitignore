@@ -17,6 +17,6 @@
 /tmp
 
 # ignore paperclip image folder
-/public/system
+/public/system/events
 
 .rbenv-vars
