@@ -18,3 +18,5 @@
 
 # ignore paperclip image folder
 /public/system
+
+.rbenv-vars
