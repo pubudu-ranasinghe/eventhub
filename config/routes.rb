@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+  get 'dashboard/attending'
+  get 'dashboard/created'
+
   devise_for :users
   resources :events do
     resources :registrations

@@ -39,14 +39,8 @@
     </div>
 
     <div class="col-md-4">
-      <h5>People attending this event</h5>
-      <ul>
 
-        <% @event.users.each do |u| %>
-          <li><%= u.name %></li>
-        <% end %>
-
-      </ul>
+      <h5><%= print_attendee_count %></h5>
     </div>
 
     </div>

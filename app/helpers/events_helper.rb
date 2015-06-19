@@ -15,4 +15,12 @@ module EventsHelper
       return "#{s_date} - #{s_time} to #{e_date} - #{e_time}"
     end
   end
+
+  def print_attendee_count
+    if @event.users.count == 0
+      return "No one registered yet. Be the first to register!"
+    else
+      return "#{@event.users.count} people attending"
+    end
+  end
 end

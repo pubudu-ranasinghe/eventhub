@@ -1,0 +1,39 @@
+<div class="container page-container event-list">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <h3>Events I created</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="list-group">
+        <% @events.each do |event| %>
+
+          <div class="media">
+            <%= link_to(event) do %>
+              <div class="media-left">
+                  <%= image_tag event.cover.url(:thumb), class: 'media-object media-thumb' %>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading"><%= event.title %></h4>
+                <p>
+                  <%= event.start_date.strftime("%b %d") %>
+                </p>
+              </div>
+            <% end %>
+          </div>
+
+        <% end %>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</div>

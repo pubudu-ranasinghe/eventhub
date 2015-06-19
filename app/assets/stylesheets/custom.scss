@@ -1,5 +1,6 @@
 $font-stack: 'Open Sans', sans-serif;
 $font-grey: #999;
+$font-black: #222;
 $main-red: #e74c3c;
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,10 +12,33 @@ p, div {
   font-family: $font-stack;
 }
 
-body {
-  background: #f6f6f6;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
+body {
+  background: #f6f6f6;
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+
+  .container {
+    // width: auto;
+    // max-width: 680px;
+    padding: 0 15px;
+    .text-muted {
+      margin: 20px 0;
+    }
+  }
+}
 .custom-nav {
   background-color: #fff;
   box-shadow: 0 0 24px 0 rgba(0,0,0,0.25);
@@ -33,7 +57,31 @@ body {
     font-weight: 700;
   }
 
+  .navbar-nav .navbar-cta {
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    background-color: #e5e5e5;
+    color: $font-grey;
+    transition: all 0.3s;
+  }
+
+  .navbar-nav .navbar-cta:focus, .navbar-nav .navbar-cta:hover {
+    background: $main-red;
+    color: #f7f7f7;
+    border-color: $main-red;
+  }
+
 }
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #555;
+}
+
 
 .hero-container {
   min-height: 70vh;
@@ -46,7 +94,7 @@ body {
   }
   .cover-img{
     display: block;
-    background-image: image-url("city-sm.jpg");
+    background-image: image-url("city-sm-e-3.jpg");
     position: absolute;
     top:0;bottom:0;left:0;right:0;
     background-size: cover;
@@ -61,7 +109,7 @@ body {
     color: #fff;
 
     h2 {
-      font-weight: 400;
+      font-weight: 700;
       font-size: 5rem;
     }
     h3 {
@@ -201,4 +249,25 @@ body {
     padding: 0 1em 1em 1em;
   }
 
+}
+
+.media-thumb {
+  width: 64px;
+}
+
+.page-container {
+  background-color: #fff;
+  margin-top: 1em;
+}
+
+.event-list {
+  a {
+    color: $font-black;
+    text-decoration: none;
+    transition: color 200ms;
+  }
+
+  a:hover, a:focus {
+    color: $main-red;
+  }
 }
