@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602104541) do
+ActiveRecord::Schema.define(version: 20150620130101) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150602104541) do
     t.integer  "user_id"
     t.integer  "creator_id"
     t.integer  "category_id"
+    t.boolean  "published"
   end
 
   create_table "registrations", force: :cascade do |t|

@@ -22,4 +22,7 @@ class Event < ActiveRecord::Base
   belongs_to :category
 
   self.per_page = 6
+
+  scope :live, ->(time) { where("start_date > ?", time) }
+  scope :published, -> { where(published: true) }
 end

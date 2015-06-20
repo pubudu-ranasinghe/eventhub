@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.paginate(:page => params[:page]).order('start_date DESC')
+    @events = Event.paginate(:page => params[:page]).live(Time.zone.now).published.order(start_date: :asc)
   end
 
   # GET /events/1
@@ -27,6 +27,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = current_user.created_events.new(event_params)
+    @event.published = false
 
     respond_to do |format|
       if @event.save
