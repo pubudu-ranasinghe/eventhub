@@ -261,13 +261,15 @@ body {
 }
 
 .event-list {
-  a {
-    color: $font-black;
-    text-decoration: none;
-    transition: color 200ms;
+
+  .media {
+    margin-top: 0;
+      // padding: 10px;
+      // border-bottom: 1px solid $font-grey
   }
 
-  a:hover, a:focus {
-    color: $main-red;
+  h4 {
+    font-weight: 400;
   }
+
 }

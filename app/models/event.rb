@@ -25,4 +25,6 @@ class Event < ActiveRecord::Base
 
   scope :live, ->(time) { where("start_date > ?", time) }
   scope :published, -> { where(published: true) }
+  scope :not_approved, -> { where(approved: false) }
+  scope :not_published, -> { where(published: false) }
 end

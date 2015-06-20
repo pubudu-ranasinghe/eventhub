@@ -4,11 +4,11 @@ class DashboardController < ApplicationController
   end
 
   def attending
-    @events = current_user.events
+    @events = current_user.events.live(Time.zone.now)
   end
 
   def created
-    @events = current_user.created_events
+    @events = current_user.created_events.order(created_at: :desc)
   end
 
 end

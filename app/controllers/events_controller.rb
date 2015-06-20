@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :authorized_user, only: [:edit, :update, :destroy]
+  before_action :authorized_user, only: [:edit, :update, :destroy, :publish, :unpublish]
 
   # GET /events
   # GET /events.json
@@ -28,6 +28,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.created_events.new(event_params)
     @event.published = false
+    @event.approved = false
 
     respond_to do |format|
       if @event.save
@@ -65,6 +66,32 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def publish
+    @event = Event.find(params[:id])
+    if @event.published == false && @event.approved == true
+      @event.update(published: true)
+      redirect_to @event, notice: 'Event was successfully published.'
+    else
+      redirect_to root_path, notice: 'Invalid action'
+    end
+  end
+
+  def unpublish
+    @event = Event.find(params[:id])
+    if @event.published == true
+      @event.update(published: false)
+      redirect_to @event, notice: 'Event was successfully unpublished.'
+    end
+  end
+
+  def approve
+    @event = Event.find(params[:id])
+    if @event.approved == false
+      @event.update(approved: true)
+      redirect_to @event, notice: 'Event approved.'
     end
   end
 

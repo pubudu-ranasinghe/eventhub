@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
+  get 'administrator/pending'
+
   get 'dashboard/index'
   get 'dashboard/attending'
   get 'dashboard/created'
 
+  get 'administrator/pending'
+
   devise_for :users
   resources :events do
     resources :registrations
+    post 'publish', on: :member
+    post 'unpublish', on: :member
+    post 'approve', on: :member
   end
 
   root 'events#index'

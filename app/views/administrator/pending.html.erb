@@ -1,0 +1,92 @@
+<div class="container page-container event-list">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <h3>Events needing approval</h3>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="list-group">
+          <% @events.each do |event| %>
+
+            <div class="media">
+              <div class="media-left">
+                  <%= image_tag event.cover.url(:thumb), class: 'media-object media-thumb' %>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading"><%= event.title %></h4>
+                <p>
+                  <%= event.start_date.strftime("%b %d") %>
+                </p>
+                <p>
+                  <%= published_status(event) %>
+                  <%= approval_status(event) %>
+                </p>
+                <div class="btn-group">
+                  <%= link_to 'View', event, class: 'btn btn-sm btn-default' %>
+                  <%= approval_button(event) %>
+                  <%= publish_button(event) %>
+                  <%= link_to 'Delete',  event,  method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure? (This cannot be undone)' } %>
+                </div>
+              </div>
+              <hr>
+            </div>
+
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h3>Unpublished Events</h3>
+        </div>
+      </div>
+    </div>
+
+
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="list-group">
+              <% @unpublished_e.each do |event| %>
+
+                <div class="media">
+                  <div class="media-left">
+                      <%= image_tag event.cover.url(:thumb), class: 'media-object media-thumb' %>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading"><%= event.title %></h4>
+                    <p>
+                      <%= event.start_date.strftime("%b %d") %>
+                    </p>
+                    <p>
+                      <%= published_status(event) %>
+                      <%= approval_status(event) %>
+                    </p>
+                    <div class="btn-group">
+                      <%= link_to 'View', event, class: 'btn btn-sm btn-default' %>
+                      <%= approval_button(event) %>
+                      <%= publish_button(event) %>
+                      <%= link_to 'Delete',  event,  method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure? (This cannot be undone)' } %>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+
+              <% end %>
+            </div>
+
+          </div>
+
+        </div>
+
+</div>
