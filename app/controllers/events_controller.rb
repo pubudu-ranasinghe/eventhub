@@ -95,6 +95,16 @@ class EventsController < ApplicationController
     end
   end
 
+  def register
+    @event = Event.find(params[:id])
+      if @event.registrations.where(user: current_user).any?
+        redirect_to @event, notice: 'Already registered'
+      else
+        @event.registrations.create(user: current_user)
+        redirect_to @event, notice: 'Successfully registered'
+      end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     # def set_event

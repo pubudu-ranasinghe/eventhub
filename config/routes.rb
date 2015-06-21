@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     post 'publish', on: :member
     post 'unpublish', on: :member
     post 'approve', on: :member
+
+    put 'register', on: :member
   end
 
   root 'events#index'

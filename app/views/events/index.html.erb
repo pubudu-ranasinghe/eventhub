@@ -16,18 +16,18 @@
     </div>
   </div>
 
-  <% @events.in_groups_of(4, false).each do |group| %>
+  <% @events.in_groups_of(3, false).each do |group| %>
   <div class="row">
 
     <% group.each do |event| %>
-    <div class="col-md-3 card-container">
+    <div class="col-md-4 card-container">
       <div class="card">
 
         <%= link_to '', event %>
-        <h2><%= event.title %></h2>
         <!-- <div class="card-img"></div> -->
         <%= image_tag event.cover.url(:thumb) %>
         <div class="card-meta">
+          <h2><%= event.title %></h2>
           <!-- <p><%= event.description %></p> -->
           <p class="date"><i class="fa fa-clock-o fa-fw"></i><%= event.start_date.strftime("%b %d") %></p>
         </div>

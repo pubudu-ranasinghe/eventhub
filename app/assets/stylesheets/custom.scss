@@ -84,13 +84,13 @@ body {
 
 
 .hero-container {
-  min-height: 70vh;
+  max-height: 22em;
   position: relative;
   padding: .5em 1em;
 
   .cover {
     width: 100%;
-    height: 70vh;
+    height: 22em;
   }
   .cover-img{
     display: block;
@@ -110,7 +110,7 @@ body {
 
     h2 {
       font-weight: 700;
-      font-size: 5rem;
+      font-size: 4rem;
     }
     h3 {
       font-weight: 400;
@@ -125,16 +125,18 @@ body {
   .card-container {
     margin: 1rem 0;
   }
+
   .card {
     background-color: #fff;
-    box-shadow: 0 0 8px rgba(0,0,0,0.075);
-    padding-top: 1em;
+    border-radius: 5px;
+    overflow: hidden;
+    // box-shadow: 0 0 8px rgba(0,0,0,0.075);
     transition: 500ms;
 
     .card-img{
       display: block;
       // width: 100%;
-      // height: 100%;
+      // height: 80%;
       padding-top: 50%;
       background-image: url(/assets/cover.jpg);
       position: absolute;
@@ -145,11 +147,6 @@ body {
 
     img {
       width: 100%;
-    }
-
-    h2 {
-      margin: 0 1rem .5rem 1rem;
-      font-size: 1.7em;
     }
 
     a {
@@ -168,11 +165,17 @@ body {
         color: $main-red;
         margin-bottom: 5px;
       }
+
+      h2 {
+        margin: 0 0 .5rem 0;
+        font-size: 1.7em;
+        font-weight: 400;
+      }
     }
   }
 
   .card:hover {
-    box-shadow: 0 0 16px rgba(0,0,0,0.2);
+    // box-shadow: 0 0 16px rgba(0,0,0,0.2);
   }
 
 }
@@ -183,6 +186,8 @@ body {
   background-color: #fff;
   margin-top: 1em;
   padding: 0;
+  border-radius: 5px;
+  overflow: hidden;
 
   img{
     width: 100%;
@@ -323,4 +328,24 @@ body {
     height: 250px;
   }
 
+}
+
+.ticket-container {
+  background-color: #fff;
+  margin-top: 1em;
+  padding: 0;
+
+  .ticket-container-inner {
+    padding: 1em;
+
+    .ticket-sub-head {
+      margin-bottom: 0;
+      text-transform: uppercase;
+      color: $font-grey;
+    }
+
+    .ticket-head {
+      font-size: 2em;
+    }
+  }
 }

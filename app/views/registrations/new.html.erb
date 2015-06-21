@@ -1,27 +1,39 @@
-<h1>Register for <%= @event.title %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 ticket-container">
 
-<%= form_for @reg do |f| %>
+      <%= image_tag @event.cover.url(:hero), class: 'img-responsive' %>
 
-  <% if @reg.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@reg.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <div class="ticket-container-inner">
 
-      <ul>
-      <% @reg.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <p class="ticket-sub-head">Event Title</p>
+        <p class="ticket-head"><%= @event.title %></p>
+        <hr>
+
+        <p class="ticket-sub-head">Event Date</p>
+        <p class="ticket-head"><%= print_event_date %></p>
+        <hr>
+
+        <p class="ticket-sub-head">Event Venue</p>
+        <p class="ticket-head"><%= @event.address %></p>
+        <hr>
+
+        <p class="text-muted">
+          By clicking register you acknowlege that you are attending this event. The event
+          organizer will be notified of your participation. Please continue only if you
+          plan on attending this event.
+        </p>
+        <!-- <div class="checkbox">
+          <label>
+            <input type="checkbox">I have read and agree to eventhub TOS
+          </label>
+        </div> -->
+        <hr>
+
+        <%= link_to 'Confirm Registration', register_event_path(@event), method: :put, class: 'btn btn-primary btn-block btn-lg' %>
+
+      </div>
+
     </div>
-  <% end %>
-
-  <div class="form-group col-md-12">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id, class: 'form-control' %>
   </div>
-
-  <div class="form-group col-md-12">
-    <%= f.label :event_id %><br>
-    <%= f.text_field :event_id, class: 'form-control' %>
-  </div>
-
-<% end %>
+</div>
