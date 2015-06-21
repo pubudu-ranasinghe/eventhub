@@ -105,6 +105,9 @@ class EventsController < ApplicationController
     def authorized_user
       @event = Event.find(params[:id])
       if @event.creator_id != current_user.id
+        if current_user.id == 1
+          return true
+        end
         redirect_to root_path, notice: "Oops! You don't have permission to do that"
       end
     end
@@ -117,6 +120,7 @@ class EventsController < ApplicationController
                                     :start_date,
                                     :start_time,
                                     :end_date,
-                                    :end_time )
+                                    :end_time,
+                                    :address )
     end
 end

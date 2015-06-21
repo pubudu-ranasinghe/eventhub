@@ -17,6 +17,7 @@
   <div class="row event-meta">
     <div class="col-md-8">
       <h4><i class="fa fa-clock-o fa-fw"></i><%= print_event_date %></h4>
+      <h4><i class="fa fa-map-marker fa-fw"></i><%= @event.address %></h4>
     </div>
     <div class="col-md-4">
       <%= registered_check(@event) %>
@@ -43,6 +44,12 @@
       <h5><%= print_attendee_count %></h5>
     </div>
 
+  </div>
+
+  <div class="row event-map">
+    <div class="col-md-12">
+      <%= render 'map' %>
     </div>
+  </div>
 
 </div>

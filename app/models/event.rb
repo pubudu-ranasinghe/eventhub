@@ -27,4 +27,9 @@ class Event < ActiveRecord::Base
   scope :published, -> { where(published: true) }
   scope :not_approved, -> { where(approved: false) }
   scope :not_published, -> { where(published: false) }
+
+  # geocoding
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+
 end
