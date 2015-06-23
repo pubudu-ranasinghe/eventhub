@@ -1,3 +1,9 @@
+<% content_for(:head) do %>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF9CVORZkgwcYTVMUuH143sJXsRMZ1M5s&libraries=places">
+  </script>
+<% end %>
+
 <div class="container event-full">
 
   <div class="row">
@@ -20,7 +26,7 @@
       <h4><i class="fa fa-map-marker fa-fw"></i><%= @event.address %></h4>
     </div>
     <div class="col-md-4">
-      <%= registered_check(@event) %>
+        <%= registered_check(@event) %>
     </div>
   </div>
 
@@ -31,17 +37,32 @@
 
         <%= simple_format(@event.description) %>
 
+        <% if @event.creator == current_user %>
+          <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn-default' %>
+        <% end %>
+
       </div>
       <!-- <%= link_to 'Register', new_event_registration_path(@event), class: 'btn btn-primary' %> -->
-      <% if @event.creator == current_user %>
-        <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-default' %>
-      <% end %>
 
     </div>
 
     <div class="col-md-4">
+      <div class="event-extra">
+        <div class="event-extra-card">
+          <p>
+            <%= print_attendee_count %>
+          </p>
+        </div>
 
-      <h5><%= print_attendee_count %></h5>
+        <div class="event-extra-card">
+          
+          <p>
+            <i class="fa fa-phone fa-fw fa-2x pull-left"></i>
+            Contact organizer <br>
+            <em>0712955290</em>
+          </p>
+        </div>
+      </div>
     </div>
 
   </div>

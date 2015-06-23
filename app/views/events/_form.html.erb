@@ -1,3 +1,9 @@
+<% content_for(:head) do %>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF9CVORZkgwcYTVMUuH143sJXsRMZ1M5s&libraries=places">
+  </script>
+<% end %>
+
 <div class="row">
 
 <%= form_for @event, :html => { :id => 'formPreventDefault', :multipart => true } do |f| %>

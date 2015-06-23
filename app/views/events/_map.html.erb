@@ -8,14 +8,15 @@
       center: location,
       zoom: 15,
       scrollwheel: false,
-      disableDefaultUI: true
+      disableDefaultUI: true,
+      zoomControl: true
     };
     var map = new google.maps.Map(document.getElementById('event-map-canvas'),
         mapOptions);
     var marker = new google.maps.Marker({
       position: location,
       map: map,
-      title: 'Hello World!'
+      icon: '<%= asset_path('marker.png') %>'
     });
   }
   google.maps.event.addDomListener(window, 'load', initialize);

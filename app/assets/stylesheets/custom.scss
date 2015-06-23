@@ -210,13 +210,13 @@ body {
   }
 
   .event-meta {
-    // background: $main-red;
+    background: $main-red;
     margin: 0;
-    padding: .5em 0;
+    padding: 1em 0;
 
     h4 {
-      margin: 10px 0;
-      // color: #fff;
+      margin: 1em 0;
+      color: #fff;
       font-weight: 400;
     }
 
@@ -231,15 +231,15 @@ body {
     .btn {
       padding: .5em 2em;
       // width: 100%;
-      background: none;
+      background: #fff;
       border: 1px solid $main-red;
       color: $main-red;
       font-size: 18px;
     }
 
     .btn:hover, .btn:focus {
-      background: $main-red;
-      color: #fff;
+      // background: $main-red;
+      // color: #fff;
     }
 
   }
@@ -252,7 +252,28 @@ body {
 
   .event-body {
     padding: 0 1em 1em 1em;
+
+
+    .event-extra {
+      padding: 1em 0;
+      line-height: 1.7em;
+      font-size: 16px;
+
+      .event-extra-card {
+        background-color: #f6f6f6;
+        padding: 1em;
+        border-radius: 5px;
+        color: $font-grey;
+        margin-bottom: 1em;
+
+        em {
+          font-weight: 700;
+        }
+        i {margin-top: .4em}
+      }
+    }
   }
+
 
 }
 
@@ -347,5 +368,14 @@ body {
     .ticket-head {
       font-size: 2em;
     }
+  }
+}
+
+.login-wrapper {
+  margin: 2em auto;
+
+  .login-form {
+    border-radius: 8px;
+    box-shadow: 0 0 2px rgba(49,55,61,0.2);
   }
 }
