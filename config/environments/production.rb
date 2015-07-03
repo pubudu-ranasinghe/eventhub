@@ -79,4 +79,17 @@ Rails.application.configure do
 
   # added for email sending by devise
   config.action_mailer.default_url_options = { host: 'eventhub.lk' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mandrillapp.com",
+    port: 587,
+    domain: "eventhub.lk",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "pubudutr@gmail.com",
+    password: "DNc82uDexAa6hmK5d3zJuQ"
+  }
 end
