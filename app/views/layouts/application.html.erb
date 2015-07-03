@@ -5,16 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Eventhub</title>
+  <title>Eventhub - Experience life</title>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-  
+
   <%= yield(:head) %>
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -34,13 +35,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "EventHub", root_path, class: 'navbar-brand' %>
+        <!-- <%= link_to "EventHub", root_path, class: 'navbar-brand' %> -->
+        <%= link_to root_path do %>
+          <%= image_tag "logo_test.png", class: "navbar-brand custom-brand" %>
+        <% end %>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="activeno"><%= link_to "Events", events_path %></li>
-          <!-- <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <!-- <li class="activeno"><%= link_to "Events", events_path %></li> -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
@@ -50,7 +54,7 @@
               <li><a href="#">Separated link</a></li>
               <li><a href="#">One more separated link</a></li>
             </ul>
-          </li> -->
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'Create Event', new_event_path, class: 'navbar-cta' %></li>
@@ -100,8 +104,8 @@
   <footer class="footer">
     <div class="container">
       <p class="text-muted">&copy 2015 Eventhub. All Rights Reserved.
-        <i class="fa fa-code fa-fw"></i> with
-        <i class="fa fa-coffee fa-fw"></i> in SL</p>
+        Made with
+        <i class="fa fa-heart fa-fw heart-icon"></i> in SL</p>
     </div>
   </footer>
 </body>

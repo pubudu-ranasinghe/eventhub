@@ -17,10 +17,18 @@ module EventsHelper
   end
 
   def print_attendee_count
-    if @event.users.count == 0
-      return "No one registered yet. Be the first to register!"
+    if @event.etype == '0'
+
+    elsif @event.users.count == 0
+      return ('<div class="event-extra-card"><p>'+
+              '<i class="fa fa-user fa-fw fa-2x pull-left"></i>'+
+              'No one registered yet. Be the first to register!'+
+              '</p></div>').html_safe
     else
-      return "#{@event.users.count} people attending"
+      return ('<div class="event-extra-card"><p>'+
+              '<i class="fa fa-user fa-fw fa-2x pull-left"></i>'+
+              "#{@event.users.count} people attending"+
+              '</p></div>').html_safe
     end
   end
 end

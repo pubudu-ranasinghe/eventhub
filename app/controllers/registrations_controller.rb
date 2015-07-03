@@ -13,6 +13,8 @@ class RegistrationsController < ApplicationController
   end
 
   def create
+      # refer event controller
+      @event.decrement!(:no_of_registrations, 1)
       redirect_to @event, notice: 'sdsbs'
   end
 

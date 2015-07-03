@@ -4,67 +4,155 @@
   </script>
 <% end %>
 
-<div class="row">
+<div class="container">
 
-<%= form_for @event, :html => { :id => 'formPreventDefault', :multipart => true } do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+  <div class="row">
 
-      <ul>
-      <% @event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <div class="col-md-8">
+
+      <%= form_for @event, :html => { :id => 'formPreventDefault', :multipart => true } do |f| %>
+        <% if @event.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h5>
+
+            <ul>
+            <% @event.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="row">
+
+          <div class="form-section">
+
+            <h5>Event Details</h5>
+            <hr>
+            <div class="form-group col-md-12">
+              <%= f.label :title %><br>
+              <%= f.text_field :title, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-12">
+              <%= f.label :description %><br>
+              <%= f.text_area :description, class: 'form-control' %>
+            </div>
+
+            <div class="form-group col-md-12">
+              <%= f.label :address %><br>
+              <%= f.text_field :address, class: 'form-control', id: 'addressSearch' %>
+            </div>
+
+            <div class="form-group col-md-12">
+              <%= f.label :cover %><br>
+              <%= f.file_field :cover %>
+            </div>
+
+            <div class="form-group col-md-3">
+              <%= f.label :start_date %><br>
+              <%= f.text_field :start_date, class: 'form-control start-datepicker' %>
+            </div>
+
+            <div class="form-group col-md-3">
+              <%= f.label :start_time %><br>
+              <%= f.text_field :start_time, value: format_time_field(@event.start_time), class: 'form-control start-timepicker' %>
+            </div>
+
+            <div class="form-group col-md-3">
+              <%= f.label :end_date %><br>
+              <%= f.text_field :end_date, class: 'form-control end-datepicker' %>
+            </div>
+
+            <div class="form-group col-md-3">
+              <%= f.label :end_time %><br>
+              <%= f.text_field :end_time, value: format_time_field(@event.end_time), class: 'form-control end-timepicker' %>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- <div class="form-group">
+              <%= f.label :etype, "Yes", :value => "true"  %>
+              <%= f.radio_button :etype, true %>
+              <%= f.label :etype, "No", :value => "false" %>
+              <%= f.radio_button :etype, false, :checked => true %>
+        </div> -->
+
+        <div class="row">
+
+          <div class="form-section">
+
+            <h5>Ticket Details</h5>
+            <hr>
+            <div class="form-group col-md-12 etype-select">
+              <%= f.label :event_type %><br />
+              <div class="" data-toggle="buttons">
+                <label class="btn btn-default">
+                  <%= f.radio_button :etype, "open", options = { checked: true } %>Open<span>Open event</span>
+                </label>
+                <label class="btn btn-default">
+                  <%= f.radio_button :etype, "free"  %>Free<span>Free event</span>
+                </label>
+                <label class="btn btn-default disabled">
+                  <%= f.radio_button :etype, "paid" %>Paid<span>Coming soon</span>
+                </label>
+                <br>
+              </div>
+              <div class="etype-desc">
+                <div class="type-msg">
+                  <p>Select an event type</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="no_of_registrations" class="form-group col-md-4">
+              <%= f.label :no_of_registrations %><br>
+              <%= f.number_field :no_of_registrations, class: 'form-control' %>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="form-section">
+            <h5>Organizer Details</h5>
+            <hr>
+
+            <div class="form-group col-md-12">
+              <%= f.label :organizer_title, 'Organizer Title' %><br>
+              <%= f.text_field :organizer_title, class: 'form-control' %>
+            </div>
+
+            <div class="form-group col-md-12">
+              <%= f.label :organizer_tel, 'Organizer Telephone' %><br>
+              <%= f.text_field :organizer_tel, class: 'form-control' %>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="actions form-group col-md-12">
+            <%= f.submit class: 'btn btn-primary' %>
+          </div>
+
+        </div>
       <% end %>
-      </ul>
+
     </div>
-  <% end %>
 
-  <div class="form-group col-md-12">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
-  <div class="form-group col-md-12">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class: 'form-control' %>
-  </div>
+    <div class="col-md-4">
+      <h3>fedjgwnslg</h3>
+    </div>
 
-  <div class="form-group col-md-12">
-    <%= f.label :address %><br>
-    <%= f.text_field :address, class: 'form-control', id: 'addressSearch' %>
   </div>
-
-  <div class="form-group col-md-12">
-    <%= f.label :cover %><br>
-    <%= f.file_field :cover %>
-  </div>
-
-  <div class="form-group col-md-3">
-    <%= f.label :start_date %><br>
-    <%= f.text_field :start_date, class: 'form-control start-datepicker' %>
-  </div>
-
-  <div class="form-group col-md-3">
-    <%= f.label :start_time %><br>
-    <%= f.text_field :start_time, value: format_time_field(@event.start_time), class: 'form-control start-timepicker' %>
-  </div>
-
-  <div class="form-group col-md-3">
-    <%= f.label :end_date %><br>
-    <%= f.text_field :end_date, class: 'form-control end-datepicker' %>
-  </div>
-
-  <div class="form-group col-md-3">
-    <%= f.label :end_time %><br>
-    <%= f.text_field :end_time, value: format_time_field(@event.end_time), class: 'form-control end-timepicker' %>
-  </div>
-
-  <div class="actions form-group col-md-12">
-    <%= f.submit class: 'btn btn-primary' %>
-  </div>
-<% end %>
 
 </div>
-
 <script type="text/javascript">
 $('.start-datepicker').pickadate({
   format: 'yyyy-mm-dd',
@@ -93,5 +181,35 @@ function initialize() {
     });
 }
 initialize();
+
+$(document).ready(function(){
+  $('#no_of_registrations').hide();
+
+  $("input[name='event[etype]']").change(function(){
+    var n = $(this).val();
+    var open_msg = '<p>Anyone can register and attend an open event freely. '+
+                   'You cannot limit the number of registrations in this type of event. '+
+                   'Use this for free and public, large-scale events.</p>';
+    var free_msg = '<p>In free events anyone can register for free. But you can '+
+                   'limit the number of available registrations. An electronic ticket '+
+                   'will be sent to registrants which you can verify at the event using '+
+                   'the list of attendees we provide you. Ideal for free meetups and events '+
+                   'where head count is limited.'
+    switch(n)
+    {
+      case 'open':
+            $('.type-msg').html(open_msg);
+            $('#event_no_of_registrations').prop("disabled", true);
+            $('#no_of_registrations').hide();
+            break;
+      case 'free':
+            $('.type-msg').html(free_msg);
+            $('#event_no_of_registrations').prop("disabled", false);
+            $('#no_of_registrations').show();
+
+            break;
+    }
+  });
+});
 
 </script>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150621120612) do
+ActiveRecord::Schema.define(version: 20150701145748) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150621120612) do
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "cover_file_name"
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20150621120612) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "etype"
+    t.integer  "no_of_registrations"
+    t.string   "organizer_title"
+    t.string   "organizer_tel"
   end
 
   create_table "registrations", force: :cascade do |t|

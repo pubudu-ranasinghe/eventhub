@@ -100,8 +100,13 @@ class EventsController < ApplicationController
       if @event.registrations.where(user: current_user).any?
         redirect_to @event, notice: 'Already registered'
       else
-        @event.registrations.create(user: current_user)
-        redirect_to @event, notice: 'Successfully registered'
+        if @event.no_of_registrations > 0
+          @event.decrement!(:no_of_registrations, 1)
+          @event.registrations.create(user: current_user)
+          redirect_to @event, notice: 'Successfully registered'
+        else
+          redirect_to @event, notice: 'Sold Out'
+        end
       end
   end
 
@@ -131,6 +136,10 @@ class EventsController < ApplicationController
                                     :start_time,
                                     :end_date,
                                     :end_time,
-                                    :address )
+                                    :address,
+                                    :etype,
+                                    :no_of_registrations,
+                                    :organizer_title,
+                                    :organizer_tel )
     end
 end
