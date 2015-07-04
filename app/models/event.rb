@@ -24,6 +24,7 @@ class Event < ActiveRecord::Base
   validates :cover, presence: true
   validates :organizer_title, presence: true
   validates :organizer_tel, presence: true
+  validates :category_id, presence: true
   # event type validation
 
   validates_presence_of :etype

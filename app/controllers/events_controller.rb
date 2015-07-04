@@ -140,6 +140,7 @@ class EventsController < ApplicationController
                                     :etype,
                                     :no_of_registrations,
                                     :organizer_title,
-                                    :organizer_tel )
+                                    :organizer_tel,
+                                    :category_id )
     end
 end

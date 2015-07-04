@@ -10,6 +10,8 @@
   <%= f.input :description %>
   <%= f.input :address %>
   <%= f.input :cover %>
+  <!-- <%= f.input :category_id, collection: Category.all %> -->
+  <%= f.association :category %>
   <div class="row">
     <%= f.input :start_date,
                 as: :string,
@@ -59,7 +61,7 @@ $(document).ready(function(){
 
   var input = document.getElementById("event_address");
   google.maps.event.addDomListener(input, 'keydown', function(e) {
-    if (e.keyCode == 13 && $('.pac-container:visible').length) { 
+    if (e.keyCode == 13 && $('.pac-container:visible').length) {
         e.preventDefault();
     }
   });
