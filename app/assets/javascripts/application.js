@@ -21,4 +21,6 @@
 //= require nprogress
 //= require nprogress-turbolinks
 
+//= require rrssb.min
+
 //= require_tree .

@@ -35,7 +35,6 @@
     <div class="col-md-8">
 
       <div class="event-desc">
-
         <%= simple_format(@event.description) %>
 
         <% if @event.creator == current_user %>
@@ -49,6 +48,10 @@
 
     <div class="col-md-4">
       <div class="event-extra">
+        <div class="event-extra-card">
+          <h5>Share Event</h5>
+          <%= render 'share' %>
+        </div>
 
         <%= print_attendee_count %>
 
