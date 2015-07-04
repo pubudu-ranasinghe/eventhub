@@ -29,5 +29,5 @@ production:
   encoding: unicode
   database: eventhubdb
   pool: 5
-  username: deploy
-  password: weareeventhub9923
+  username: <%= ENV["POSTGRES_PROD_USER"] %>
+  password: <%= ENV["POSTGRES_PROD_PASS"] %>
