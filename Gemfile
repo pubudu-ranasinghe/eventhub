@@ -22,6 +22,7 @@ gem 'simple_form'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'omniauth-facebook'
 gem 'pg'
 
 group :development, :test do
