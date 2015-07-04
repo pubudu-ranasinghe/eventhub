@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'administrator/pending'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "users/sessions" }
 
   resources :events do
     resources :registrations
