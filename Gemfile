@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'omniauth-facebook'
 gem 'pg'
+gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   gem 'byebug'

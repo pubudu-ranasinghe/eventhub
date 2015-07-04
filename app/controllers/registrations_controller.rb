@@ -2,7 +2,7 @@ class RegistrationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @event = Event.find(params[:event_id])
+    @event = Event.friendly.find(params[:event_id])
     @reg = @event.registrations.new
     # if @event.registrations.where(user: current_user).any?
     #   redirect_to @event, notice: 'Already registered'

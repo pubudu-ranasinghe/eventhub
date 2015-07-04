@@ -5,6 +5,10 @@ class Event < ActiveRecord::Base
     2 => "Paid(Coming soon)"
   }
 
+  # friendly id
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
+
   has_attached_file :cover,
                     :styles => { :hero => "960x300#", :thumb => "300x200#" },
                     :convert_options => { :hero => "-strip", :thumb => "-quality 75 -strip" }, :default_url => "/images/:style/missing.png"
@@ -59,6 +63,5 @@ class Event < ActiveRecord::Base
   # geocoding
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
-
 
 end

@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
   end
 
   # GET /events/new
@@ -70,7 +70,7 @@ class EventsController < ApplicationController
   end
 
   def publish
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
     if @event.published == false && @event.approved == true
       @event.update(published: true)
       redirect_to @event, notice: 'Event was successfully published.'
@@ -80,7 +80,7 @@ class EventsController < ApplicationController
   end
 
   def unpublish
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
     if @event.published == true
       @event.update(published: false)
       redirect_to @event, notice: 'Event was successfully unpublished.'
@@ -88,7 +88,7 @@ class EventsController < ApplicationController
   end
 
   def approve
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
     if @event.approved == false
       @event.update(approved: true)
       redirect_to @event, notice: 'Event approved.'
@@ -96,7 +96,7 @@ class EventsController < ApplicationController
   end
 
   def register
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
       if @event.registrations.where(user: current_user).any?
         redirect_to @event, notice: 'Already registered'
       else
@@ -118,7 +118,7 @@ class EventsController < ApplicationController
 
     # check authorized user for edits update delete
     def authorized_user
-      @event = Event.find(params[:id])
+      @event = Event.friendly.find(params[:id])
       if @event.creator_id != current_user.id
         if current_user.id == 1
           return true
