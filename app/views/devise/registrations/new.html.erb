@@ -7,25 +7,36 @@
         <div class="login-form">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
+
             <div class="form-group">
               <%= f.email_field :email, autofocus: true, class: 'form-control input-lg', placeholder: 'Email' %>
             </div>
+
             <div class="form-group">
-              <%= f.text_field :name, class: 'form-control input-lg', placeholder: 'Full Name' %>
+              <%= f.text_field :f_name, class: 'form-control input-lg', placeholder: 'First Name' %>
             </div>
+
+            <div class="form-group">
+              <%= f.text_field :l_name, class: 'form-control input-lg', placeholder: 'Last Name' %>
+            </div>
+
             <div class="form-group">
               <% if @validatable %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
               <%= f.password_field :password, autocomplete: "off", class: 'form-control input-lg', placeholder: 'Password' %>
             </div>
+
             <div class="form-group">
               <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control input-lg', placeholder: 'Password Confirmation' %>
             </div>
+
             <div class="form-group">
               <%= f.submit "Sign Up", class: 'btn btn-primary btn-block btn-lg btn-login' %>
             </div>
+
             <%= render "devise/shared/links" %>
+
           <% end %>
         </div>
       </div>
