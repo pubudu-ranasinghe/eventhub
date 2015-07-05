@@ -37,6 +37,7 @@
   <%= f.input :no_of_registrations, disabled: true %>
   <h4>Organizer Details</h4>
   <%= f.input :organizer_title %>
+  <%= f.input :organizer_desc, input_html: { maxlength: 300 }, label: 'Organizer Details(max 300 characters)' %>
   <%= f.input :organizer_tel, as: :tel %>
 
   <%= f.button :submit, class: 'btn btn-primary' %>
