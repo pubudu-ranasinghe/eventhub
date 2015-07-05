@@ -42,4 +42,15 @@ module EventsHelper
               '</p></div>').html_safe
     end
   end
+
+  def print_organizer_desc
+    if @event.organizer_desc.present?
+      return ('<div class="event-desc">'+
+              '<p>Organized by '+
+              @event.organizer_title+
+              '</p><p>'+
+              simple_format(@event.organizer_desc)+
+              '</p></div>').html_safe
+    end
+  end
 end
