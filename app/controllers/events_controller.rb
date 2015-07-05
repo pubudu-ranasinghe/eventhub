@@ -141,6 +141,7 @@ class EventsController < ApplicationController
                                     :no_of_registrations,
                                     :organizer_title,
                                     :organizer_tel,
-                                    :category_id )
+                                    :category_id,
+                                    :fb_url )
     end
 end
