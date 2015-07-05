@@ -143,6 +143,7 @@ class EventsController < ApplicationController
                                     :organizer_tel,
                                     :category_id,
                                     :fb_url,
-                                    :organizer_desc )
+                                    :organizer_desc,
+                                    :telephone_visible )
     end
 end

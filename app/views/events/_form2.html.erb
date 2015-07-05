@@ -6,39 +6,45 @@
 
 <%= simple_form_for(@event, html: { class: '', multipart: true}) do |f| %>
   <h4>Event Details</h4>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :cover %>
+  <%= f.input :title, label: 'Event Title' %>
+  <%= f.input :description, label: 'Event Description' %>
+  <%= f.input :address, label: 'Venue' %>
+  <%= f.input :cover, label: 'Cover Image' %>
   <!-- <%= f.input :category_id, collection: Category.all %> -->
-  <%= f.association :category %>
-  <%= f.input :fb_url, label: 'Facebook Event Url', as: :url %>
+  <%= f.association :category, label: 'Event Category' %>
+  <%= f.input :fb_url, label: 'Facebook Event Link', as: :url %>
   <div class="row">
     <%= f.input :start_date,
+                label: 'Start Date',
                 as: :string,
                 wrapper_html: { class: 'col-md-3' } %>
     <%= f.input :start_time,
+                label: 'Start Time',
                 as: :string,
                 wrapper_html: { class: 'col-md-3' },
                 input_html: { value: format_time_field(@event.start_time) } %>
     <%= f.input :end_date,
+                label: 'End Date',
                 as: :string,
                 wrapper_html: { class: 'col-md-3' } %>
     <%= f.input :end_time,
+                label: 'End Time',
                 as: :string,
                 wrapper_html: { class: 'col-md-3' },
                 input_html: { value: format_time_field(@event.start_time) } %>
   </div>
   <h4>Registration Details</h4>
   <%= f.input :etype,
+              label: 'Event Type',
               collection: Event::TYPES.sort.map {|k,v| [v,k]},
               as: :radio_buttons,
               disabled: 2 %>
-  <%= f.input :no_of_registrations, disabled: true %>
+  <%= f.input :no_of_registrations, disabled: true, label: 'Number of Registrations' %>
   <h4>Organizer Details</h4>
-  <%= f.input :organizer_title %>
-  <%= f.input :organizer_desc, input_html: { maxlength: 300 }, label: 'Organizer Details(max 300 characters)' %>
-  <%= f.input :organizer_tel, as: :tel %>
+  <%= f.input :organizer_title, label: 'Organizer Title' %>
+  <%= f.input :organizer_desc, input_html: { maxlength: 300 }, label: 'Organizer Details (max 300 characters)' %>
+  <%= f.input :organizer_tel, as: :tel, label: 'Organizer Contact Number' %>
+  <%= f.input :telephone_visible, label: 'Show my contact number on event page' %>
 
   <%= f.button :submit, class: 'btn btn-primary' %>
 

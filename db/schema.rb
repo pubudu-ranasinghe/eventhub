@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705133717) do
+ActiveRecord::Schema.define(version: 20150705152058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20150705133717) do
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "cover_file_name"
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150705133717) do
     t.string   "slug"
     t.string   "fb_url"
     t.text     "organizer_desc"
+    t.boolean  "telephone_visible",   default: false
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", using: :btree

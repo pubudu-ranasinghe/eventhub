@@ -53,4 +53,14 @@ module EventsHelper
               '</p></div>').html_safe
     end
   end
+
+  def print_organizer_tel
+    if @event.telephone_visible
+      return ('<div class="event-extra-card"><p>'+
+              '<i class="fa fa-phone fa-fw fa-2x pull-left"></i>'+
+              'Contact organizer '+
+              @event.organizer_tel+
+              '</p></div>').html_safe
+    end
+  end
 end

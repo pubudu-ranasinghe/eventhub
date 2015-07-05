@@ -1,8 +1,8 @@
 class Event < ActiveRecord::Base
   TYPES = {
-    0 => "Open(free and unlimited entry )",
+    0 => "Open (Free and unlimited entry)",
     1 => "Limited Entry",
-    2 => "Paid(Coming soon)"
+    2 => "Paid (Coming soon)"
   }
 
   # friendly id

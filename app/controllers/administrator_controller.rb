@@ -15,7 +15,7 @@ class AdministratorController < ApplicationController
 
     # check authorized user for edits update delete
     def authorize_admins
-
+      
       if current_user.id != 1
         redirect_to root_path, notice: "Oops! You don't have permission to do that"
       end
