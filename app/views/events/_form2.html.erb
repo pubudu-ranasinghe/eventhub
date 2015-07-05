@@ -53,33 +53,22 @@
   $('#event_start_time').pickatime();
   $('#event_end_time').pickatime();
 
-$(document).ready(function(){
+  $(document).ready(function(){
 
-  new google.maps.places.Autocomplete(
-  (document.getElementById("event_address")), {
-      //options
-  });
+    new google.maps.places.Autocomplete(
+    (document.getElementById("event_address")), {
+        //options
+    });
 
-  var input = document.getElementById("event_address");
-  google.maps.event.addDomListener(input, 'keydown', function(e) {
-    if (e.keyCode == 13 && $('.pac-container:visible').length) {
-        e.preventDefault();
-    }
-  });
+    var input = document.getElementById("event_address");
+    google.maps.event.addDomListener(input, 'keydown', function(e) {
+      if (e.keyCode == 13 && $('.pac-container:visible').length) {
+          e.preventDefault();
+      }
+    });
 
-  var a = $("input[name='event[etype]']:checked").val();
-  switch(a) {
-    case "0":
-      $("#event_no_of_registrations").prop("disabled", true);
-      break;
-    case "1":
-      $("#event_no_of_registrations").prop("disabled", false);
-      break;
-  }
-
-  $("input[name='event[etype]']").change(function() {
-    var n = $(this).val();
-    switch(n) {
+    var a = $("input[name='event[etype]']:checked").val();
+    switch(a) {
       case "0":
         $("#event_no_of_registrations").prop("disabled", true);
         break;
@@ -87,6 +76,18 @@ $(document).ready(function(){
         $("#event_no_of_registrations").prop("disabled", false);
         break;
     }
+
+    $("input[name='event[etype]']").change(function() {
+      var n = $(this).val();
+      switch(n) {
+        case "0":
+          $("#event_no_of_registrations").prop("disabled", true);
+          break;
+        case "1":
+          $("#event_no_of_registrations").prop("disabled", false);
+          break;
+      }
+    });
   });
-});
+
 </script>
