@@ -50,6 +50,7 @@
     </div>
 
     <div class="col-md-4">
+
       <div class="event-extra">
         <div class="event-extra-card">
           <h5>Share Event</h5>
@@ -67,9 +68,20 @@
 
   </div>
 
+
   <div class="row event-map">
     <div class="col-md-12">
       <%= render 'map' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="event-promo text-center">
+        <h4>Want to see your event here?</h4>
+        <h4>Submit your event now. It's free!</h4>
+        <%= link_to 'Create Event', new_event_path, class: 'btn btn-primary btn-promo-cta' %>
+      </div>
     </div>
   </div>
 

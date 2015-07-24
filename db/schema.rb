@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20150705152058) do
     t.string   "organizer_title"
     t.string   "organizer_tel"
     t.string   "slug"
-    t.string   "fb_url"
     t.text     "organizer_desc"
     t.boolean  "telephone_visible",   default: false
   end

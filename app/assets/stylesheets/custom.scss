@@ -2,6 +2,7 @@ $font-stack: 'Lato', sans-serif;
 $font-grey: #777;
 $font-black: #333;
 $main-red: #e74c3c;
+$main-blue: #3498db;
 // $main-red: #f63;
 
 h1, h2, h3, h4, h5, h6 {
@@ -327,6 +328,8 @@ body {
     }
 
     .event-extra {
+      padding: 1em;
+      margin-bottom: 1em;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
       // padding: 1em 0;
       line-height: 1.7em;
@@ -338,8 +341,7 @@ body {
 
     .event-extra-card {
       // background-color: #f6f6f6;
-      padding: 1em 0;
-      margin: 0 1em;
+      padding: 0 1em 1em 1em;
       border-radius: 5px;
       color: $font-grey;
       border-bottom: 1px solid rgba(0,0,0,.05);
@@ -350,6 +352,44 @@ body {
       }
 
     }
+
+    .event-extra-card:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+  }
+
+  .event-promo {
+    padding: 2em 1em;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    background-color: $main-blue;
+    margin-bottom: 1em;
+
+    h4 {
+      margin: 0;
+      color: #fff;
+      line-height: 1.5em;
+      font-weight: 400;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+    }
+
+    .btn-promo-cta {
+      padding: .6em 1.5em;
+      background: #fff;
+      border: none;
+      font-weight: 700;
+      color: $main-blue;
+      text-transform: uppercase;
+      border-radius: 25px;
+      font-size: 1em;
+      line-height: 1.3em;
+      letter-spacing: 0.1em;
+      margin-top: 1em;
+    }
+
   }
 
 
@@ -420,6 +460,9 @@ body {
 }
 
 .event-map {
+  margin-bottom: 1.5em;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 
   .event-map-canvas {
     height: 250px;
