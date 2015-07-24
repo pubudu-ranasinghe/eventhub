@@ -12,7 +12,7 @@
   <%= f.input :cover, label: 'Cover Image' %>
   <!-- <%= f.input :category_id, collection: Category.all %> -->
   <%= f.association :category, label: 'Event Category' %>
-  <%= f.input :fb_url, label: 'Facebook Event Link', as: :url %>
+  <%= f.input :fb_link, label: 'Facebook Event Link', as: :url %>
   <div class="row">
     <%= f.input :start_date,
                 label: 'Start Date',

@@ -33,10 +33,10 @@ module EventsHelper
   end
 
   def print_fb_link
-    if @event.fb_url.present?
+    if @event.fb_link.present?
       return ('<div class="event-extra-card"><p>'+
               '<a href="'+
-              @event.fb_url+
+              @event.fb_link+
               '"><i class="fa fa-facebook fa-fw fa-2x pull-left"></i>'+
               'Facebook Event</a>'+
               '</p></div>').html_safe

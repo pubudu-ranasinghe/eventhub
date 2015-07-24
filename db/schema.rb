@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150724140735) do
     t.string   "slug"
     t.text     "organizer_desc"
     t.boolean  "telephone_visible",   default: false
-    t.string   "fb_url"
+    t.string   "fb_link"
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", using: :btree
