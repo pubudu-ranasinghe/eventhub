@@ -103,6 +103,9 @@ class EventsController < ApplicationController
         if @event.no_of_registrations > 0
           @event.decrement!(:no_of_registrations, 1)
           @event.registrations.create(user: current_user)
+
+          send_ticket_to_user(current_user.id, @event.id)
+
           redirect_to @event, notice: 'Successfully registered'
         else
           redirect_to @event, notice: 'Sold Out'
@@ -115,6 +118,10 @@ class EventsController < ApplicationController
     # def set_event
     #   @event = Event.find(params[:id])
     # end
+
+    def send_ticket_to_user(user_id, event_id)
+      UserMailer.send_ticket(user_id, event_id).deliver_later
+    end
 
     # check authorized user for edits update delete
     def authorized_user
