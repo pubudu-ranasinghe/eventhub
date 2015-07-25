@@ -7,7 +7,6 @@ class UserMailer < BaseMandrillMailer
       # "USER_URL" => user_url(user),
     }
     body = mandrill_template("welcome", merge_vars)
-
     send_mail(user.email, subject, body)
   end
 end
