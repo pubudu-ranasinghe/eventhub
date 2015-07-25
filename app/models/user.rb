@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+  after_create :subscribe_user_to_mailing_list
   # has_many :events
 
   has_many :registrations
@@ -29,4 +30,10 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  private
+
+    def subscribe_user_to_mailing_list
+      SubscribeUserToMailingListJob.perform_later(self)
+    end
 end

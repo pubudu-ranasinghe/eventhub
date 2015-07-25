@@ -89,7 +89,7 @@ Rails.application.configure do
     domain: "eventhub.lk",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "pubudutr@gmail.com",
-    password: "DNc82uDexAa6hmK5d3zJuQ"
+    user_name: ENV["MANDRILL_USERNAME"],
+    password: ENV["MANDRILL_API_KEY"]
   }
 end

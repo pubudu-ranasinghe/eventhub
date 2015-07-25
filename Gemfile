@@ -25,6 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth-facebook'
 gem 'pg'
 gem 'friendly_id', '~> 5.1.0'
+gem 'gibbon'
+gem 'mandrill-api'
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 group :development, :test do
   gem 'byebug'
