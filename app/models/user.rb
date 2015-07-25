@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
       end
     end
   end
-
+ 
   private
 
     def subscribe_user_to_mailing_list
