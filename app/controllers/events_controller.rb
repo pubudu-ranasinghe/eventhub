@@ -16,7 +16,6 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    UserMailer.welcome(current_user.id)
     @event = Event.new
   end
 
