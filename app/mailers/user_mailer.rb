@@ -31,6 +31,7 @@ class UserMailer < BaseMandrillMailer
       "EDATETIME" => f_datetime,
       "EVENUE" => event.address,
       "ECOVERURL" => "http://eventhub.lk#{event.cover.url(:hero)}",
+      "ELATLNG" => "#{event.latitude},#{event.longitude}",
       # need to change this probably
     }
     body = mandrill_template("ticket", merge_vars)
