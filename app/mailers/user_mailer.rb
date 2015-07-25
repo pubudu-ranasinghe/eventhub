@@ -30,7 +30,7 @@ class UserMailer < BaseMandrillMailer
       "ANAME" => "#{user.f_name.capitalize} #{user.l_name.capitalize}",
       "EDATETIME" => f_datetime,
       "EVENUE" => event.address,
-      "ECOVERURL" => "http://eventhub#{event.cover.url(:hero)}",
+      "ECOVERURL" => "http://eventhub.lk#{event.cover.url(:hero)}",
       # need to change this probably
     }
     body = mandrill_template("ticket", merge_vars)
