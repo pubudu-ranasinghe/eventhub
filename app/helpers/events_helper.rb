@@ -32,6 +32,14 @@ module EventsHelper
     end
   end
 
+  def print_ticket_details
+    if @event.etype == '2'
+      return ('<div class="event-extra event-extra-ticket">'+
+              simple_format(@event.ticket_details)+
+              '</div>').html_safe
+    end
+  end
+
   def print_fb_link
     if @event.fb_link.present?
       return ('<div class="event-extra-card"><p>'+

@@ -343,7 +343,11 @@ body {
       font-size: 16px;
       background-color: #fff;
       border-radius: 4px;
+    }
 
+    .event-extra-ticket {
+      background-color: $main-red;
+      color: #fff;
     }
 
     .event-extra-card {
@@ -425,7 +429,7 @@ body {
   .new-event-container {
     margin-top: 1em;
 
-    label { font-weight: 400 } 
+    label { font-weight: 400 }
   }
 
   .new-event-tips {
