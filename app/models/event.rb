@@ -13,6 +13,7 @@ class Event < ActiveRecord::Base
                     :styles => { :hero => "960x300#", :thumb => "300x200#" },
                     :convert_options => { :hero => "-strip", :thumb => "-quality 75 -strip" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
+  validates_with AttachmentSizeValidator, :attributes => :cover, :less_than => 3.megabytes
 
   validates :title, presence: true
   validates :description, presence: true

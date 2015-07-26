@@ -41,8 +41,8 @@
   <br>
   <h4>Registration Details</h4>
   <hr>
-  <span class="help-block col-sm-offset-3 col-sm-9">Note: At the moment we are unable to sell tickets in our platform.
-              Meanwhile if you are hosting a paid event you can select paid option and add the ticket details below.</span>
+  <span class="help-block col-sm-offset-3 col-sm-9">Note : At the moment our
+    platform does not support online ticket handling. If your event is paid ticket based, you can add the ticket details below.</span>
   <%= f.input :etype,
               label: 'Event Type',
               collection: Event::TYPES.sort.map {|k,v| [v,k]},
