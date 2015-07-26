@@ -151,6 +151,7 @@ class EventsController < ApplicationController
                                     :category_id,
                                     :fb_link,
                                     :organizer_desc,
-                                    :telephone_visible )
+                                    :telephone_visible,
+                                    :ticket_details )
     end
 end
