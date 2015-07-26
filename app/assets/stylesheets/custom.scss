@@ -22,11 +22,11 @@ html {
 
 body {
   background: #f6f6f6;
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 }
 
 .footer {
-  position: absolute;
+  // position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -280,7 +280,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     // background-color: $main-red;
     color: $font-grey;
-    display: flex;
+    // display: flex;
     align-items: center;
     justify-content: center;
 
@@ -290,6 +290,8 @@ body {
       font-weight: 400;
 
     }
+
+    .reg-box { margin-top: 2em }
 
     .registered-notice {
       padding: .5em;
@@ -407,6 +409,8 @@ body {
 .page-container {
   background-color: #fff;
   margin-top: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
 
   .new-event-header {
     background-color: $main-red;
@@ -415,6 +419,24 @@ body {
       color: #fff;
       margin: 0;
       padding: 0.5em;
+    }
+  }
+
+  .new-event-container {
+    margin-top: 1em;
+
+    label { font-weight: 400 } 
+  }
+
+  .new-event-tips {
+    padding: 1em;
+
+    .tip-card {
+      padding: 1em;
+      background-color: #efefef;
+      border-radius: 4px;
+
+      p { margin: 0}
     }
   }
 }

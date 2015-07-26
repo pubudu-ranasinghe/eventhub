@@ -4,49 +4,68 @@
   </script>
 <% end %>
 
-<%= simple_form_for(@event, html: { class: '', multipart: true}) do |f| %>
+<%= simple_form_for(@event, html: { class: 'form-horizontal', multipart: true}, wrapper: :horizontal_form) do |f| %>
+  <br>
   <h4>Event Details</h4>
-  <%= f.input :title, label: 'Event Title' %>
-  <%= f.input :description, label: 'Event Description', input_html: { rows: 5} %>
-  <%= f.input :address, label: 'Venue' %>
-  <%= f.input :cover, label: 'Cover Image' %>
+  <hr>
+  <%= f.input :title, label: 'Event Title',
+              hint: 'Enter the title of your event' %>
+  <%= f.input :description, label: 'Event Description', input_html: { rows: 5},
+              hint: 'Enter a suitable description of your event' %>
+  <%= f.input :address, label: 'Venue',
+              hint: 'Where is your event held? (Please make sure you enter a valid Google Maps location)' %>
+  <%= f.input :cover, label: 'Cover Image', wrapper: :horizontal_file_input,
+              hint: 'Upload a beautiful cover photo for you event. (Max: 2MB) '%>
   <!-- <%= f.input :category_id, collection: Category.all %> -->
-  <%= f.association :category, label: 'Event Category' %>
-  <%= f.input :fb_link, label: 'Facebook Event Link', as: :url %>
-  <div class="row">
+  <%= f.association :category, label: 'Event Category', include_blank: false %>
+  <%= f.input :fb_link, label: 'Facebook Event Link', as: :url,
+              hint: 'If you have a Facebook event or page we can add a link to it.'%>
+    <div class="form-group">
+
+    <span class="help-block col-sm-offset-3 col-sm-9">Set the time and date of your event. If it's a one day event select the same day for start and finish dates.</span>
+    </div>
     <%= f.input :start_date,
                 label: 'Start Date',
-                as: :string,
-                wrapper_html: { class: 'col-md-3' } %>
+                as: :string %>
     <%= f.input :start_time,
                 label: 'Start Time',
                 as: :string,
-                wrapper_html: { class: 'col-md-3' },
                 input_html: { value: format_time_field(@event.start_time) } %>
     <%= f.input :end_date,
                 label: 'End Date',
-                as: :string,
-                wrapper_html: { class: 'col-md-3' } %>
+                as: :string %>
     <%= f.input :end_time,
                 label: 'End Time',
                 as: :string,
-                wrapper_html: { class: 'col-md-3' },
                 input_html: { value: format_time_field(@event.start_time) } %>
-  </div>
+  <br>
   <h4>Registration Details</h4>
+  <hr>
   <%= f.input :etype,
               label: 'Event Type',
               collection: Event::TYPES.sort.map {|k,v| [v,k]},
               as: :radio_buttons,
-              disabled: 2 %>
-  <%= f.input :no_of_registrations, disabled: true, label: 'Number of Registrations' %>
+              disabled: 2,
+              wrapper: :horizontal_radio_and_checkboxes %>
+  <%= f.input :no_of_registrations, disabled: true, label: 'Number of Registrations',
+              hint: 'How many people can attend your event? We will close registrations once the event reaches this number.'%>
+  <br>
   <h4>Organizer Details</h4>
-  <%= f.input :organizer_title, label: 'Organizer Title' %>
-  <%= f.input :organizer_desc, input_html: { maxlength: 300 }, label: 'Organizer Details (max 300 characters)' %>
-  <%= f.input :organizer_tel, as: :tel, label: 'Organizer Contact Number' %>
-  <%= f.input :telephone_visible, label: 'Show my contact number on event page' %>
+  <hr>
+  <%= f.input :organizer_title, label: 'Organizer Title',
+              hint: 'This will be displayed as the event organizer' %>
+  <%= f.input :organizer_desc, input_html: { maxlength: 300 }, label: 'Organizer Details',
+              hint: 'A liitle description about you. Maximum 300 characters.'%>
+  <%= f.input :organizer_tel, as: :tel, label: 'Organizer Contact Number',
+              hint: 'We need a valid telephone number incase we need to contact you. Don\'t worry we\'ll keep it private if you
+               choose not to display it on the page.' %>
+  <%= f.input :telephone_visible, label: 'Show my contact number on event page', wrapper: :horizontal_boolean %>
 
-  <%= f.button :submit, class: 'btn btn-primary' %>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
+  </div>
 
 <% end %>
 

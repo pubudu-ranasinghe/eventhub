@@ -1,27 +1,19 @@
-<div class="container">
+<div class="container page-container">
   <div class="row">
-
-    <h1>Edit Event : <%= @event.title %></h1>
-
-    <div class="row">
-      <div class="col-md-12">
-
+    <div class="new-event-header col-md-12">
+      <h2><i class="fa fa-pencil-square-o"></i>
+        Edit Event : <%= @event.title %>
+      </h2>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="new-event-container">
         <%= render 'form2' %>
-
       </div>
-
     </div>
 
-    <div class="row">
-
-      <div class="col-md-12">
-
-        <%= link_to 'View', @event, class: 'btn btn-default' %>
-        <%= link_to 'Cancel', events_path, class: 'btn btn-default' %>
-
-      </div>
-
+    <div class="col-md-offset-4 col-md-4">
+      <%= link_to 'View', @event, class: 'btn btn-default' %>
+      <%= link_to 'Cancel', events_path, class: 'btn btn-default' %>
     </div>
-
   </div>
 </div>
