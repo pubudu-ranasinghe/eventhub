@@ -407,6 +407,16 @@ body {
 .page-container {
   background-color: #fff;
   margin-top: 1em;
+
+  .new-event-header {
+    background-color: $main-red;
+
+    h2 {
+      color: #fff;
+      margin: 0;
+      padding: 0.5em;
+    }
+  }
 }
 
 .event-list {
