@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 
   after_create :send_welcome_email_to_user
   after_create :subscribe_user_to_mailing_list
-  # has_many :events
 
   has_many :registrations
   has_many :events, :through => :registrations
@@ -31,7 +30,7 @@ class User < ActiveRecord::Base
       end
     end
   end
- 
+
   private
 
     def subscribe_user_to_mailing_list

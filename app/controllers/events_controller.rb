@@ -102,7 +102,14 @@ class EventsController < ApplicationController
       else
         if @event.no_of_registrations > 0
           @event.decrement!(:no_of_registrations, 1)
-          @event.registrations.create(user: current_user)
+
+          if @event.users.count == 0
+            registerNumber = 1
+          else
+            registerNumber = @event.users.count + 1
+          end
+
+          @event.registrations.create( user: current_user, register_number: registerNumber )
 
           send_ticket_to_user(current_user.id, @event.id)
 
@@ -127,7 +134,7 @@ class EventsController < ApplicationController
     def authorized_user
       @event = Event.friendly.find(params[:id])
       if @event.creator_id != current_user.id
-        if current_user.id == 1
+        if current_user.email == 'pubudu@eventhub.lk' || current_user.email == 'pavithra@eventhub.lk'
           return true
         end
         redirect_to root_path, notice: "Oops! You don't have permission to do that"
