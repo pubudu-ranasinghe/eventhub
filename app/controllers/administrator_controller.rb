@@ -5,6 +5,7 @@ class AdministratorController < ApplicationController
   def pending
     @events = Event.not_approved.order(start_date: :desc)
     @unpublished_e = Event.not_published.order(start_date: :desc)
+    @all_events = Event.all
   end
 
   private
