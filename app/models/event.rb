@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   TYPES = {
     0 => "Open (Free and unlimited entry)",
     1 => "Limited Entry",
-    2 => "Paid (Coming soon)"
+    2 => "Paid"
   }
 
   # friendly id
@@ -13,6 +13,7 @@ class Event < ActiveRecord::Base
                     :styles => { :hero => "960x300#", :thumb => "300x200#" },
                     :convert_options => { :hero => "-strip", :thumb => "-quality 75 -strip" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
+  validates_with AttachmentSizeValidator, :attributes => :cover, :less_than => 3.megabytes
 
   validates :title, presence: true
   validates :description, presence: true
@@ -34,6 +35,10 @@ class Event < ActiveRecord::Base
 
   validates :no_of_registrations, presence: true, numericality: { greater_than_or_equal_to: 10, less_than: 1000}, if: :is_limited_event?
 
+  # ticket details validation if paid event
+  validates :ticket_details, length: { maximum: 150 }, if: :is_paid_event?
+  validates :ticket_details, presence: false, unless: :is_paid_event?
+
   after_validation :set_reg_no
 
   def set_reg_no
@@ -41,6 +46,9 @@ class Event < ActiveRecord::Base
   end
   def is_limited_event?
     etype == 1
+  end
+  def is_paid_event?
+    etype == 2
   end
 
   # belongs_to :user
