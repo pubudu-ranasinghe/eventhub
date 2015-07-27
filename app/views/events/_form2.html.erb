@@ -15,7 +15,7 @@
   <%= f.input :address, label: 'Venue',
               hint: 'Where is your event held? (Please make sure you enter a valid Google Maps location)' %>
   <%= f.input :cover, label: 'Cover Image', wrapper: :horizontal_file_input,
-              hint: 'Upload a beautiful cover photo (Max: 2MB) '%>
+              hint: 'Upload a beautiful cover photo (Max: 3MB) '%>
   <!-- <%= f.input :category_id, collection: Category.all %> -->
   <%= f.association :category, label: 'Event Category', include_blank: false %>
   <%= f.input :fb_link, label: 'Facebook Event Link', as: :url,
