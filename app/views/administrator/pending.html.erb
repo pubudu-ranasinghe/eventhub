@@ -31,6 +31,7 @@
                 <%= link_to 'View', event, class: 'btn btn-sm btn-default' %>
                 <%= approval_button(event) %>
                 <%= publish_button(event) %>
+                <%= link_to 'Edit',  edit_event_path(@event), class: 'btn btn-sm btn-default' %>
                 <%= link_to 'Delete',  event,  method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure? (This cannot be undone)' } %>
               </div>
             </div>
@@ -74,6 +75,7 @@
                 <%= link_to 'View', event, class: 'btn btn-sm btn-default' %>
                 <%= approval_button(event) %>
                 <%= publish_button(event) %>
+                <%= link_to 'Edit',  edit_event_path(@event), class: 'btn btn-sm btn-default' %>
                 <%= link_to 'Delete',  event,  method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure? (This cannot be undone)' } %>
               </div>
             </div>
@@ -118,6 +120,7 @@
                 <%= link_to 'View', event, class: 'btn btn-sm btn-default' %>
                 <%= approval_button(event) %>
                 <%= publish_button(event) %>
+                <%= link_to 'Edit',  edit_event_path(@event), class: 'btn btn-sm btn-default' %>
                 <%= link_to 'Delete',  event,  method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure? (This cannot be undone)' } %>
               </div>
             </div>
