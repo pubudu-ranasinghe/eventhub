@@ -100,9 +100,10 @@ class EventsController < ApplicationController
       if @event.registrations.where(user: current_user).any?
         redirect_to @event, notice: 'Already registered'
       else
-        if @event.no_of_registrations > 0
-          @event.decrement!(:no_of_registrations, 1)
+        if @event.users.count <= @event.no_of_registrations
+          # @event.decrement!(:no_of_registrations, 1)
 
+          # builds the register_number
           if @event.users.count == 0
             registerNumber = 1
           else
@@ -115,7 +116,7 @@ class EventsController < ApplicationController
 
           redirect_to @event, notice: 'Successfully registered'
         else
-          redirect_to @event, notice: 'Sold Out'
+          redirect_to @event, notice: 'Sorry. Sold Out'
         end
       end
   end
