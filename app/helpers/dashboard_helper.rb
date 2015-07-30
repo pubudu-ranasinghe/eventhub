@@ -16,4 +16,13 @@ module DashboardHelper
     end
   end
 
+  def print_registration_count(e)
+    if e.etype == '1'
+      return ('<div class="media-right"><h4>'+
+             "#{e.users.count} of #{e.no_of_registrations}"+
+             '<h5>Registrations reserved</h5></div>').html_safe
+
+    end
+  end
+
 end

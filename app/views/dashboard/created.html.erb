@@ -32,6 +32,9 @@
                 <%= link_to 'Delete',  event,  method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure? (This cannot be undone)' } %>
               </div>
             </div>
+
+            <%= print_registration_count(event) %>
+
             <hr>
           </div>
 
