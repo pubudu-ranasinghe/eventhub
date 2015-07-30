@@ -8,7 +8,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 media-list-custom">
 
       <div class="list-group">
         <% @events.each do |event| %>
@@ -18,12 +18,12 @@
                 <%= image_tag event.cover.url(:thumb), class: 'media-object media-thumb' %>
             </div>
             <div class="media-body">
-              <h4 class="media-heading"><%= event.title %></h4>
+              <h4 class="media-heading"><%= event.title %> <%= published_status(event) %></h4>
               <p>
                 <%= event.start_date.strftime("%b %d") %>
               </p>
               <p>
-                <%= published_status(event) %>
+
                 <%= approval_status(event) %>
               </p>
               <div class="btn-group">

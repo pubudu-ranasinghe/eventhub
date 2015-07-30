@@ -36,7 +36,6 @@
 
       <div class="event-desc">
 
-        <h3><%= @event.users.count %></h3>
         <%= simple_format(@event.description) %>
 
         <% if @event.creator == current_user %>

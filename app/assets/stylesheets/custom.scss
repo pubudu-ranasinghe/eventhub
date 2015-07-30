@@ -453,8 +453,21 @@ body {
 
   h4 {
     font-weight: 400;
+    line-height: 1.4em;
   }
 
+}
+
+.media-list-custom {
+
+  .media-body {
+    width: auto;
+    padding-right: 30px;
+  }
+
+  .progress-thin { height: 5px; }
+
+  .progress-bar-red { background-color: $main-red; }
 }
 
 #map-canvas { height: 300px; margin: 0; padding: 0;}
