@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   get 'dashboard/attending'
   get 'dashboard/created'
+  get 'dashboard/list/:id', controller: 'dashboard', action: 'list', as: 'dashboard_list'
 
   get 'administrator/pending'
 
