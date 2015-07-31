@@ -1,0 +1,49 @@
+<div class="container page-container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <br>
+      <h3>Guest List</h3>
+      <br>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p><strong>Event:</strong><%= " #{@event.title}" %></p>
+          <p><strong>Date:</strong><%= print_event_date %></p>
+          <p><strong>Venue:</strong><%= " #{@event.address}" %></p>
+          <p><strong>Attendees:</strong><%= " #{@event.users.count}" %></p>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <tr>
+          <th>#</th>
+          <th>Ticket Id</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+
+        <% count = 0 %>
+
+        <% @reg.each do |r| %>
+          <% u = User.find(r.user_id) %>
+          <% count+=1 %>
+          <tr>
+            <td><%= "#{count}" %></td>
+            <td><%= "#{r.register_number.to_s.rjust(3, '0')}-#{u.id.to_s.rjust(3, '0')}-#{@event.id.to_s.rjust(3, '0')}" %></td>
+            <td><%= "#{u.f_name.capitalize} #{u.l_name.capitalize}" %></td>
+            <td><%= "#{u.email}" %></td>
+          <tr>
+        <% end %>
+
+
+      </table>
+    </div>
+  </div>
+
+</div>

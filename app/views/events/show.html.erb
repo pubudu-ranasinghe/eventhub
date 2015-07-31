@@ -35,6 +35,7 @@
     <div class="col-md-8">
 
       <div class="event-desc">
+
         <%= simple_format(@event.description) %>
 
         <% if @event.creator == current_user %>
