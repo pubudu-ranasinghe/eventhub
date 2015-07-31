@@ -8,41 +8,51 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12 media-list-custom">
-
-      <div class="list-group">
-        <% @events.each do |event| %>
-
-          <div class="media">
-            <div class="media-left">
-                <%= image_tag event.cover.url(:thumb), class: 'media-object media-thumb' %>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading"><%= event.title %> <%= published_status(event) %></h4>
-              <p>
-                <%= event.start_date.strftime("%b %d") %>
-              </p>
-              <p>
-
-                <%= approval_status(event) %>
-              </p>
-              <div class="btn-group">
-                <%= link_to 'View', event, class: 'btn btn-sm btn-default' %>
-                <%= link_to 'Guest List', dashboard_list_path(event), class: 'btn btn-sm btn-default' %>
-                <%= publish_button(event) %>
-                <%= link_to 'Delete',  event,  method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure? (This cannot be undone)' } %>
-              </div>
-            </div>
-
-            <%= print_registration_count(event) %>
-
-            <hr>
-          </div>
-
-        <% end %>
+    <% if @events.empty? %>
+      <div class="col-md-12 text-center">
+        <%= image_tag "icons/empty-state-icon-256.png", class: 'empty-state-icon' %>
+        <h3>It's lonely in here</h3>
+        <h6>You are not hosting any events yet.</h6>
+        <%= link_to 'Create Event', root_path, class: 'btn btn-primary btn-primary-cstom' %>
       </div>
 
-    </div>
+    <% else %>
+      <div class="col-md-12 media-list-custom">
+
+        <div class="list-group">
+          <% @events.each do |event| %>
+
+            <div class="media">
+              <div class="media-left">
+                  <%= image_tag event.cover.url(:thumb), class: 'media-object media-thumb' %>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading"><%= event.title %> <%= published_status(event) %></h4>
+                <p>
+                  <%= event.start_date.strftime("%b %d") %>
+                </p>
+                <p>
+
+                  <%= approval_status(event) %>
+                </p>
+                <div class="btn-group">
+                  <%= link_to 'View', event, class: 'btn btn-sm btn-default' %>
+                  <%= link_to 'Guest List', dashboard_list_path(event), class: 'btn btn-sm btn-default' %>
+                  <%= publish_button(event) %>
+                  <%= link_to 'Delete',  event,  method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure? (This cannot be undone)' } %>
+                </div>
+              </div>
+
+              <%= print_registration_count(event) %>
+
+              <hr>
+            </div>
+
+          <% end %>
+        </div>
+
+      </div>
+    <% end %>
 
   </div>
 
