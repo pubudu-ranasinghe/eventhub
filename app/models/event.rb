@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
   validates :organizer_tel, presence: true
   validates :category_id, presence: true
 
-  validates :organizer_desc, length: { maximum: 300 }
+  validates :organizer_desc, length: { maximum: 800 }
   # event type validation
 
   validates_presence_of :etype
