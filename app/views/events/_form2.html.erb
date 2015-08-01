@@ -56,8 +56,8 @@
   <hr>
   <%= f.input :organizer_title, label: 'Organizer Title',
               hint: 'This will be displayed as the event organizer' %>
-  <%= f.input :organizer_desc, input_html: { maxlength: 300 }, label: 'Organizer Details',
-              hint: 'A small description about you. Maximum 300 characters.'%>
+  <%= f.input :organizer_desc, input_html: { maxlength: 1000 }, label: 'Organizer Details',
+              hint: 'A small description about you. Maximum 1000 characters.'%>
   <%= f.input :organizer_tel, as: :tel, label: 'Organizer Contact Number',
               hint: 'We need a valid telephone number incase we need to contact you.  Your number will be kept private unless you select to display.' %>
   <%= f.input :telephone_visible, label: 'Show my contact number on event page', wrapper: :horizontal_boolean %>
