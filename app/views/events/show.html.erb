@@ -4,6 +4,20 @@
   </script>
 <% end %>
 
+<%
+meta title: @event.title,
+     description: truncate(@event.description, length: 150),
+     author: @event.organizer_title,
+     keywords: %w(event sri lanka colombo)
+%>
+<%
+meta og: {
+  title: "#{@event.title} — Eventhub",
+  image: URI.join(request.url, @event.cover.url(:thumb)),
+  description: truncate(@event.description, length: 150)
+}
+%>
+
 <div class="container event-full">
 
   <div class="row">

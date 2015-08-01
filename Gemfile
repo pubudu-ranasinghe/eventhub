@@ -28,6 +28,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'gibbon'
 gem 'mandrill-api'
 gem 'high_voltage'
+gem 'metamagic'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
