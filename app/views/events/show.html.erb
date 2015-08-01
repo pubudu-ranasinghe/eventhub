@@ -13,7 +13,8 @@ meta title: @event.title,
 <%
 meta og: {
   title: "#{@event.title} — Eventhub",
-  image: URI.join(request.url, @event.cover.url(:thumb)),
+  image: URI.join(request.url, @event.cover.url(:hero)),
+  url: request.original_url,
   description: truncate(@event.description, length: 150)
 }
 %>
