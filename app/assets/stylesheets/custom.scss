@@ -615,4 +615,11 @@ body {
   padding: 10px 12px 12px 20px;
 }
 
-.ff {background-color: red}
+.empty-state-icon {
+  width: 128px;
+}
+
+.btn-primary-cstom {
+  background-color: $main-red;
+  border: none;
+}
