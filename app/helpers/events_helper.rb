@@ -17,23 +17,25 @@ module EventsHelper
   end
 
   def print_attendee_count
-    if @event.etype == '0'
+    if @event.etype == '1'
 
-    elsif @event.users.count == 0
-      return ('<div class="event-extra-card"><p>'+
-              '<i class="fa fa-user fa-fw fa-2x pull-left"></i>'+
-              'No one registered yet. Be the first to register!'+
-              '</p></div>').html_safe
-    else
-      return ('<div class="event-extra-card"><p>'+
-              '<i class="fa fa-user fa-fw fa-2x pull-left"></i>'+
-              "#{@event.users.count} people attending"+
-              '</p></div>').html_safe
+      if @event.users.count == 0
+        return ('<div class="event-extra-card"><p>'+
+                '<i class="fa fa-user fa-fw fa-2x pull-left"></i>'+
+                'No one registered yet. Be the first to register!'+
+                '</p></div>').html_safe
+      else
+        return ('<div class="event-extra-card"><p>'+
+                '<i class="fa fa-user fa-fw fa-2x pull-left"></i>'+
+                "#{@event.users.count} people attending"+
+                '</p></div>').html_safe
+      end
+
     end
   end
 
   def print_ticket_details
-    if @event.etype == '2'
+    if @event.etype == '2' && !@event.ticket_details.empty?
       return ('<div class="event-extra event-extra-ticket">'+
               simple_format(@event.ticket_details)+
               '</div>').html_safe
