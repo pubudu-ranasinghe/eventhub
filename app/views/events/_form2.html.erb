@@ -51,6 +51,8 @@
               hint: 'How many people can attend your event? We will close registrations once the event reaches this number.'%>
   <%= f.input :ticket_details, disabled: true, input_html: { maxlength: 150, rows: 5 }, label: 'Ticket Details',
               hint: 'Add details about your tickets like prices and where to buy them'%>
+  <%= f.input :ticket_url, label: 'Ticket Url', as: :url,
+              hint: 'If you are selling tickets online add a link where people can buy them. We\'ll direct them to this link.' %>
   <br>
   <h4>Organizer Details</h4>
   <hr>

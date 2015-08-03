@@ -160,6 +160,7 @@ class EventsController < ApplicationController
                                     :fb_link,
                                     :organizer_desc,
                                     :telephone_visible,
-                                    :ticket_details )
+                                    :ticket_details,
+                                    :ticket_url )
     end
 end

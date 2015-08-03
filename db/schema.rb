@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727072336) do
+ActiveRecord::Schema.define(version: 20150803125000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150727072336) do
     t.boolean  "telephone_visible",   default: false
     t.string   "fb_link"
     t.text     "ticket_details"
+    t.string   "ticket_url"
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", using: :btree
