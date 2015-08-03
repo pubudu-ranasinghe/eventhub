@@ -6,6 +6,11 @@ module RegistrationsHelper
       content_tag(:h4, "Registrations Unavailable", class: 'registered-notice')
     elsif e.etype != '1'
       # return empty
+      if e.ticket_url.present?
+        content_tag(:div) do
+          concat link_to 'Register Now!', e.ticket_url, class: 'btn btn-primary'
+        end
+      end
     else
       if e.registrations.where(user: current_user).any?
         content_tag(:h4, "You are registered", class: 'registered-notice')
