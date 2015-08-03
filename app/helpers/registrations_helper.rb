@@ -8,7 +8,7 @@ module RegistrationsHelper
       # return empty
       if e.ticket_url.present?
         content_tag(:div) do
-          concat link_to 'Register Now!', e.ticket_url, class: 'btn btn-primary'
+          concat link_to 'Buy Tickets Now!', e.ticket_url, class: 'btn btn-primary'
         end
       end
     else
