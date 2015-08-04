@@ -3,7 +3,7 @@ $body-font-stack: 'Open Sans', sans-serif;
 $font-grey: #777;
 $font-black: #222;
 $main-red: #e74c3c;
-$main-blue: #3498db;
+$main-blue: #2e3d4f;
 // $main-red: #f63;
 
 h1, h2, h3, h4, h5, h6 {
@@ -120,13 +120,13 @@ body {
 
 
 .hero-container {
-  max-height: 70vh;
+  max-height: 65vh;
   position: relative;
   padding: .5em 1em;
 
   .cover {
     width: 100%;
-    height: 70vh;
+    height: 65vh;
   }
   .cover-img{
     display: block;
@@ -173,32 +173,33 @@ body {
   .cover-cta-container {
     margin: 1em 0;
 
-    .btn-cta {
+    .btn {
       padding: .6em 1.5em;
+      font-size: 1.2em;
+      margin: 1em 0.5em;
+      color: #fff;
+    }
+
+    .btn-cta {
       background: $main-red;
       border: none;
       font-weight: 700;
-      color: #fff;
       text-transform: uppercase;
       border-radius: 25px;
-      font-size: 1em;
       line-height: 1.3em;
       letter-spacing: 0.1em;
-      margin: 1em;
     }
 
     .btn-cta-default {
-      padding: .42em 1.5em;
-      background: none;
+      background-color: $main-blue;
       border: none;
       font-weight: 700;
       color: #fff;
       text-transform: uppercase;
       border-radius: 25px;
-      border: 0.2em solid #fff;
-      font-size: 1em;
       line-height: 1.3em;
       letter-spacing: 0.1em;
+
     }
   }
 
