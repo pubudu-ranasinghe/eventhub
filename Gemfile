@@ -29,6 +29,7 @@ gem 'gibbon'
 gem 'mandrill-api'
 gem 'high_voltage'
 gem 'metamagic'
+gem 'skylight'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
