@@ -24,7 +24,7 @@ class Event < ActiveRecord::Base
   validates :end_time, presence: true
   validates :cover, presence: true
   validates :organizer_title, presence: true
-  validates :organizer_tel, presence: true
+  # validates :organizer_tel, presence: true
   validates :category_id, presence: true
 
   # validates :organizer_desc, length: { maximum: 1000 }
