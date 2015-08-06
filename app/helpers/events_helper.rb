@@ -4,8 +4,8 @@ module EventsHelper
   end
 
   def print_event_date
-    s_date = @event.start_date.strftime("%b %d")
-    e_date = @event.end_date.strftime("%b %d")
+    s_date = @event.start_date.strftime("%a, %b %d")
+    e_date = @event.end_date.strftime("%a, %b %d")
     s_time = @event.start_time.strftime("%I:%M%p")
     e_time = @event.end_time.strftime("%I:%M%p")
 
