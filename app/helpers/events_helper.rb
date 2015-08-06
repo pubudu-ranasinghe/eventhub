@@ -21,12 +21,12 @@ module EventsHelper
 
       if @event.users.count == 0
         return ('<div class="event-extra-card"><p>'+
-                '<i class="fa fa-user fa-fw fa-2x pull-left"></i>'+
+                '<i class="icon ion-android-people md-36"></i>'+
                 'No one registered yet. Be the first to register!'+
                 '</p></div>').html_safe
       else
         return ('<div class="event-extra-card"><p>'+
-                '<i class="fa fa-user fa-fw fa-2x pull-left"></i>'+
+                '<i class="icon ion-android-people md-36"></i>'+
                 "#{@event.users.count} people attending"+
                 '</p></div>').html_safe
       end
@@ -47,7 +47,7 @@ module EventsHelper
       return ('<div class="event-extra-card"><p>'+
               '<a href="'+
               @event.fb_link+
-              '"><i class="fa fa-facebook fa-fw fa-2x pull-left"></i>'+
+              '"><i class="icon ion-social-facebook md-36"></i>'+
               'Facebook Event</a>'+
               '</p></div>').html_safe
     end
@@ -67,7 +67,7 @@ module EventsHelper
   def print_organizer_tel
     if @event.telephone_visible
       return ('<div class="event-extra-card"><p>'+
-              '<i class="fa fa-phone fa-fw fa-2x pull-left"></i>'+
+              '<i class="icon ion-android-call md-36"></i>'+
               'Contact organizer '+
               @event.organizer_tel+
               '</p></div>').html_safe

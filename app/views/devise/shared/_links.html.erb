@@ -1,7 +1,7 @@
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
     <%= link_to  omniauth_authorize_path(resource_name, provider), class: "#{provider.to_s}-login-btn btn btn-primary btn-lg btn-block" do %>
-      <i class="fa fa-facebook-official fa-lg fa-fw"></i>
+      <i class="icon ion-social-facebook md-24"></i>
       Sign in with Facebook
     <% end %>
     <br />

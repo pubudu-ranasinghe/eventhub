@@ -118,6 +118,16 @@ body {
   color: #555;
 }
 
+.icon {
+  vertical-align: bottom;
+  padding: 0 8px;
+  line-height: 1em;
+}
+
+.icon.md-18 { font-size: 18px; }
+.icon.md-24 { font-size: 24px; }
+.icon.md-36 { font-size: 36px; padding: 0 12px; }
+.icon.md-48 { font-size: 48px; }
 
 .hero-container {
   max-height: 50vh;
@@ -315,7 +325,6 @@ body {
       margin: 1em 0;
       // color: #fff;
       font-weight: 400;
-
     }
 
     .reg-box { margin-top: 2em }
