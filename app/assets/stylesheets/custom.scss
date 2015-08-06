@@ -1,4 +1,4 @@
-$font-stack: 'Montserrat', sans-serif;
+$font-stack: 'Lato', sans-serif;
 $body-font-stack: 'Open Sans', sans-serif;
 $font-grey: #777;
 $font-black: #222;
@@ -72,15 +72,19 @@ body {
   margin-bottom: 0;
   z-index: 99;
 
+  .menu-profile { text-transform: none; }
   .navbar-nav li {
-    text-transform: none;
-    font-size: 1.1em;
+    text-transform: uppercase;
+    font-size: 1em;
     font-weight: 400;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.5px;
+
+    a {
+      transition: color 0.4s;
+    }
 
     a:hover { color: $main-red }
   }
-
 
   .navbar-brand {
     color: $main-red;
@@ -203,15 +207,8 @@ body {
     }
 
     .btn-cta-default {
-      background-color: $main-blue;
-      border: none;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      border-radius: 25px;
-      line-height: 1.3em;
-      letter-spacing: 0.1em;
-
+      background-color: #fff;
+      color: #262626;
     }
   }
 
@@ -219,8 +216,17 @@ body {
 }
 
 .post-grid {
-  padding-top: 2rem;
+  // padding-top: 2rem;
 
+  .section-head {
+    padding: 1em;
+
+    h3 {
+      font-weight: 400;
+      margin: 1em 0;
+      color: $font-grey;
+    }
+  }
   .card-container {
     margin: 1rem 0;
   }

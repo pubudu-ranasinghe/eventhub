@@ -14,8 +14,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -49,11 +49,10 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <!-- <li class="activeno"><%= link_to "Events", events_path %></li> -->
-          <li class="dropdown">
+          <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li class="dropdown-header">Browse by categories</li>
-              <!-- <li class="divider"></li> -->
               <li><a href="#">Party</a></li>
               <li><a href="#">School</a></li>
               <li><a href="#">Tech</a></li>
@@ -67,13 +66,13 @@
               <li><a href="#">Conference</a></li>
               <li><a href="#">Other</a></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li><%= link_to 'Create Event', new_event_path, class: 'navbar-cta' %></li>
             <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle menu-profile" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.f_name %> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><%= link_to 'My Events', dashboard_attending_path %></li>
                 <li role="presentation" class="divider"></li>

@@ -18,8 +18,8 @@
 //= require turbolinks
 //= require picker
 
-//= require nprogress
-//= require nprogress-turbolinks
+// = require nprogress
+// = require nprogress-turbolinks
 
 //= require rrssb.min
 
