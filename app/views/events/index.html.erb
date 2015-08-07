@@ -47,7 +47,9 @@ meta og: {
         <div class="card-meta">
           <h2><%= event.title %></h2>
           <!-- <p><%= event.description %></p> -->
-          <p class="date"><i class="icon ion-android-calendar"></i><%= event.start_date.strftime("%b %d") %></p>
+          <p class="date"><i class="icon ion-android-calendar"></i><%= event.start_date.strftime("%b %d") %>
+          <%= print_card_label(event.start_date) %>
+          </p>
         </div>
 
       </div>
