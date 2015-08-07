@@ -4,6 +4,8 @@ $font-grey: #777;
 $font-black: #222;
 $main-red: #e74c3c;
 $main-blue: #2e3d4f;
+$flat-green: #2ecc71;
+$flat-red: #ff6d5e;
 // $main-red: #f63;
 
 h1, h2, h3, h4, h5, h6 {
@@ -287,7 +289,6 @@ body {
 
 }
 
-.notice-bar { margin-top: 2em; }
 
 .event-full {
   // background-color: #fff;
@@ -663,4 +664,36 @@ body {
   // padding: .2em .6em .2em;
   margin: 0 .2em;
   vertical-align: inherit;
+}
+
+.error-container {
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: 98;
+}
+.alert {
+  border-radius: 0;
+  padding: 5px 15px;
+  border: none;
+  color: #fff;
+  margin-bottom: 0;
+}
+.alert-success {
+  background-color: $flat-green;
+
+  p::before {
+    font-family: 'Ionicons';
+    content: '\f120';
+    padding: 0 5px;
+  }
+}
+.alert-danger {
+  background-color: $flat-red;
+
+  p::before {
+    font-family: 'Ionicons';
+    content: '\f100';
+    padding: 0 5px;
+  }
 }

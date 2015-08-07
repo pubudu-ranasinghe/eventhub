@@ -93,9 +93,9 @@
   </nav>
 
   <% if notice %>
-  <div class="container">
+  <div class="container error-container">
     <div class="row">
-      <div class="col-md-12 notice-bar">
+      <div class="col-md-12">
         <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
       </div>
     </div>
@@ -103,9 +103,9 @@
   <% end %>
 
   <% if alert %>
-  <div class="container">
+  <div class="container error-container">
     <div class="row">
-      <div class="col-md-12 notice-bar">
+      <div class="col-md-12">
         <div class="alert alert-danger" role="alert"><p id="notice"><%= alert %></p></div>
       </div>
     </div>

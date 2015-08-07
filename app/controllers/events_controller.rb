@@ -138,7 +138,7 @@ class EventsController < ApplicationController
         if current_user.email == 'pubudu@eventhub.lk' || current_user.email == 'pavithra@eventhub.lk'
           return true
         end
-        redirect_to root_path, notice: "Oops! You don't have permission to do that"
+        redirect_to root_path, alert: "Oops! You don't have permission to do that"
       end
     end
 
