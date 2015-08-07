@@ -593,8 +593,6 @@ body {
   margin: 3em auto;
   background-color: #fff;
   padding: 1em;
-  border-radius: 7px;
-  border: 1px solid #dedede;
 
   h3 { margin: 0; line-height: 1.4em; text-align: center;}
 
@@ -605,7 +603,9 @@ body {
 
   .form-control {
     box-shadow: none;
-    border-color: #dedede;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #dedede;
   }
 
   ::-webkit-input-placeholder {
@@ -622,15 +622,21 @@ body {
   }
   .form-control:focus {
     box-shadow: none;
+    border-color: $main-red;
   }
 
   .facebook-login-btn {
     // color: red;
   }
-  .btn { border: none; }
+  .btn {
+    border: none;
+    border-radius: 25px;
+  }
   .btn-login { background-color: $main-red; }
 
   .btn-login:hover, btn-login:focus { background-color: #D94031 }
+
+  .login-links { margin-bottom: 10px; }
 }
 
 
