@@ -670,7 +670,12 @@ body {
 
 .label-main-red {
   background-color: $main-red;
-  // padding: .2em .6em .2em;
+  margin: 0 .2em;
+  vertical-align: inherit;
+}
+
+.label-main-green {
+  background-color: $flat-green;
   margin: 0 .2em;
   vertical-align: inherit;
 }
