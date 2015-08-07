@@ -16,10 +16,21 @@ module EventsHelper
     end
   end
 
-  def print_card_label(start_date)
+  def print_tomo_label(start_date)
     if start_date.to_date == Date.tomorrow
       ("<span class=\"label label-main-red\">Tomorrow</span>").html_safe
     end
+  end
+
+  def print_ongoing_label(start_date)
+    if start_date.to_date == Date.tomorrow
+      ("<span class=\"label label-main-red\">Tomorrow</span>").html_safe
+    end
+  end
+
+
+  def method_name
+
   end
 
   def print_attendee_count

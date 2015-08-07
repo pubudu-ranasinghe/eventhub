@@ -50,7 +50,7 @@ meta og: {
           <h2><%= event.title %></h2>
           <!-- <p><%= event.description %></p> -->
           <p class="date"><i class="icon ion-android-calendar"></i><%= event.start_date.strftime("%b %d") %>
-          <%= print_card_label(event.start_date) %>
+          <%= print_tomo_label(event.start_date) %>
           </p>
         </div>
 
@@ -60,8 +60,6 @@ meta og: {
 
   </div>
 <% end %>
-
-
 
   <div class="row text-center">
     <%= will_paginate %>
