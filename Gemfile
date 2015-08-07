@@ -11,12 +11,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 # gem 'haml', '~> 4.0.6'
-gem 'paperclip', '~> 4.2.1'
+gem 'paperclip', '~> 4.2.2'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'devise'
 gem 'will_paginate', '~> 3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
-gem 'nprogress-rails'
+# gem 'nprogress-rails'
 gem 'geocoder', '~> 1.2.9'
 gem 'simple_form'
 
@@ -37,7 +37,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 2.1.3'
   gem 'spring'
 
   gem 'capistrano',         require: false

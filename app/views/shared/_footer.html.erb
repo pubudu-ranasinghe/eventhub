@@ -1,12 +1,27 @@
 <footer class="footer">
   <div class="container">
-    <div class="copy footer-links">
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'About Us', page_path('about') %>
-      <%= link_to 'Privacy', page_path('privacy') %>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="site-links">
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'About Us', page_path('about') %></li>
+          <li><%= link_to 'Privacy', page_path('privacy') %></li>
+        </ul>
+      </div>
+      <!-- <div class="col-md-6">
+        <ul class="social-links">
+          <li><a href="https://www.facebook.com/EventHublk"><i class="icon ion-social-facebook"></i></a></li>
+          <li><a href="https://www.facebook.com/EventHublk"><i class="icon ion-social-twitter"></i></a></li>
+        </ul>
+      </div> -->
     </div>
-    <p class="copy text-muted">&copy 2015 Eventhub. All Rights Reserved.
-      Made with
-      <i class="icon ion-heart heart-icon"></i> in SL</p>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="copy">&copy; 2015 Eventhub. All Rights Reserved.
+          Made with
+          <i class="icon ion-heart heart-icon"></i> in SL
+        </p>
+      </div>
+    </div>
   </div>
 </footer>

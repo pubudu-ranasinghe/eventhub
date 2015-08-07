@@ -43,26 +43,49 @@ body {
     // max-width: 680px;
     padding: 2em 1em 0 1em;
 
-    .footer-links a {
-      color: #555;
-      margin-right: 20px;
+    .site-links {
+      padding-left: 0;
+
+      li {
+        list-style: none;
+        display: inline-block;
+        padding: 20px 20px 20px 0;
+
+        a { color: $font-grey; transition: color .4s; }
+        a:hover, a:focus { color: $font-black; text-decoration: none; }
+      }
+    }
+    .social-links {
+      float: right;
+
+      li {
+        display: inline-block;
+        position: relative;
+        margin: 20px 0;
+        width: 36px;
+        text-align: center;
+        list-style: none;
+        font-weight: normal;
+        font-size: 24px;
+        background-color: $font-black;
+        border-radius: 5px;
+        margin-right: 5px;
+
+        a {
+          color: #fff;
+        }
+        }
+      }
+    }
+    .copy {
+      margin-bottom: 30px;
     }
 
-    .footer-links a:hover, footer-links a:focus {
-      color: #222;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
     .heart-icon { color: #FF8598 }
 
-    .copy {
-      font-size: 1em;
-      margin-bottom: 2em;
-    }
-
-  }
-
 }
+
+
 
 
 .custom-nav {
