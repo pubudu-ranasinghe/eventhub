@@ -31,6 +31,7 @@ gem 'high_voltage'
 gem 'metamagic'
 gem 'skylight'
 gem 'redcarpet'
+gem 'autoprefixer-rails'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
