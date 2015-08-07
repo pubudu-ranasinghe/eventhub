@@ -11,7 +11,9 @@ meta og: {
   description: "Welcome to eventhub.lk! The truly Sri Lankan platform for all Sri Lankan events!"
 }
 %>
-
+<style media="screen">
+  .cover-img{ background-image: url(<%= asset_path "#{rand(1..6)}.jpg" %>);}
+</style>
 <div class="container-fluid hero-container">
   <div class="cover">
     <div class="cover-img"></div>

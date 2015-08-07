@@ -148,7 +148,7 @@ body {
   }
   .cover-img{
     display: block;
-    background-image: image-url("man-recording-music-concert-on-smart-phone.jpg");
+    // background-image: image-url("1.jpg");
     position: absolute;
     top:0;bottom:0;left:0;right:0;
     background-size: cover;
@@ -175,11 +175,14 @@ body {
     text-align: center;
 
     h2 {
-      font-weight: 700;
-      font-size: 3.5rem;
-      letter-spacing: 1px;
+      font-weight: 900;
+      font-size: 44px;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: .05em;
       margin: 5px 0;
       color: #fff;
+      text-transform: uppercase;
     }
     h3 {
       font-weight: 400;
