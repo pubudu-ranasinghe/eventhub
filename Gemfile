@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
-gem 'haml', '~> 4.0.6'
+# gem 'haml', '~> 4.0.6'
 gem 'paperclip', '~> 4.2.1'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'devise'
@@ -30,6 +30,7 @@ gem 'mandrill-api'
 gem 'high_voltage'
 gem 'metamagic'
 gem 'skylight'
+gem 'redcarpet'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
