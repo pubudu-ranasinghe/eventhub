@@ -64,7 +64,7 @@ class Event < ActiveRecord::Base
 
   self.per_page = 12
 
-  scope :live, ->(time) { where("end_date > ?", time) }
+  scope :live, ->(time) { where("end_date >= ?", time) }
   scope :published, -> { where(published: true) }
   scope :not_approved, -> { where(approved: false) }
   scope :not_published, -> { where(published: false) }

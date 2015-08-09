@@ -22,9 +22,12 @@ module EventsHelper
     end
   end
 
-  def print_live_label(start_date, end_date)
-    if start_date.to_date < DateTime.now.to_date && end_date.to_date > DateTime.now.to_date
-      ("<span class=\"label label-main-green\">Live</span>").html_safe
+  def print_today_label(start_date, end_date)
+
+    if start_date == end_date && start_date == DateTime.now.to_date
+      ("<span class=\"label label-main-green\">Today</span>").html_safe
+    elsif start_date.to_date <= DateTime.now.to_date && end_date.to_date >= DateTime.now.to_date
+      ("<span class=\"label label-main-green\">Ongoing</span>").html_safe
     end
   end
 
