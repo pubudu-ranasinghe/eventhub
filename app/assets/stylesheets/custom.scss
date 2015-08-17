@@ -734,3 +734,17 @@ body {
     padding: 0 5px;
   }
 }
+
+@media ( max-width: 768px ) {
+    .hero-container .cover-text h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+    .hero-container .cover-text h3 {
+        font-size: 22px;
+    }
+    .hero-container .cover-cta-container .btn-cta {
+        margin: .3em;
+        font-size: 1em;
+    }
+}
