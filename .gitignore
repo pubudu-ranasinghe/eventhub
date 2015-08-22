@@ -21,3 +21,5 @@
 
 .rbenv-vars
 .env
+
+.vagrant/
