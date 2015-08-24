@@ -21,5 +21,6 @@
 
 //= require rrssb.min
 
+//= require typed
 
 //= require_tree .

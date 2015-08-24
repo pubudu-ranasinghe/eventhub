@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.1.3'
   gem 'spring'
+  gem 'therubyracer'
 
   gem 'capistrano',         require: false
   gem 'capistrano-rbenv',   require: false

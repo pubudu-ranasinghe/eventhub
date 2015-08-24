@@ -1,12 +1,32 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-xs-4 col-sm-3">
+        <h5>FIND US ON</h5>
+        <ul class="social-link-icons">
+          <li><a href="https://www.facebook.com/EventHublk"><i class="icon ion-social-facebook"></i></a></li>
+          <li><a href="https://www.facebook.com/EventHublk"><i class="icon ion-social-twitter"></i></a></li>
+        </ul>
+      </div>
+      <div class="col-xs-4 col-sm-3">
+        <h5>EVENTS</h5>
+        <ul class="site-links">
+          <li><%= link_to 'Find Events', root_path %></li>
+          <li><%= link_to 'Add Event', new_event_path %></li>
+          <li><%= link_to 'Why Eventhub', page_path('organize') %></li>
+        </ul>
+      </div>
+      <div class="col-xs-4 col-sm-3">
+        <h5>EVENTHUB</h5>
         <ul class="site-links">
           <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'About Us', page_path('about') %></li>
           <li><%= link_to 'Privacy', page_path('privacy') %></li>
+          <li><%= link_to 'Contact Us', page_path('contact') %></li>
         </ul>
+      </div>
+      <div class="col-sm-3">
+        <%= image_tag "logo_grey.png", class: "img-responsive footer-logo" %>
       </div>
       <!-- <div class="col-md-6">
         <ul class="social-links">
@@ -17,6 +37,7 @@
     </div>
     <div class="row">
       <div class="col-md-12">
+        <hr class="ruler">
         <p class="copy">&copy; 2015 Eventhub. All Rights Reserved.
           Made with
           <i class="icon ion-heart heart-icon"></i> in SL

@@ -1,0 +1,174 @@
+.section {
+  padding: 80px 0;
+
+  .hero-text-container {
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 72px;
+    font-weight: 700;
+    color: #fff;
+
+  }
+  h2 {
+    font-family: $body-font-stack;
+    color: #fff;
+    font-weight: 300;
+  }
+}
+
+.intro-a {
+  background-color: #fff;
+  padding-bottom: 0;
+  h1 {
+    font-size: 36px;
+    color: #222;
+  }
+  p {
+    font-size: 24px;
+    color: #222;
+    font-weight: 300;
+  }
+}
+
+.intro-b {
+  // background: linear-gradient(to top right, #31a8e6, #317dd3, #7053c4);
+
+  h1 {
+    font-size: 36px;
+    color: #222;
+  }
+  p {
+    font-size: 24px;
+    color: #777;
+    font-weight: 300;
+  }
+  .bullet-row {
+    margin: 0 3em;
+
+    .bullet-icon {
+      padding: 20px 0;
+    }
+    p {
+      font-size: 16px;
+
+      span { color: $main-red; }
+    }
+  }
+}
+
+.intro-c {
+  background: image-url("promo/mac.jpg") no-repeat center center;
+  background-size: 100%;
+  background-size: cover;
+  background-position: fixed;
+  h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 300;
+  }
+}
+
+.intro-d {
+  // background: image-url("promo/mac.jpg") no-repeat center center;
+  background-color: #fff;
+  h1 {
+    font-size: 36px;
+    color: #222;
+  }
+  p {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 300;
+  }
+  .btn-cta {
+    border-radius: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: .5em ;
+    font-size: 18px;
+    font-family: $font-stack;
+    font-weight: 400;
+    border: 2px solid;
+    width: 200px;
+    color: #fff;
+  }
+  .btn-cta--red {
+    background-color: $main-red;
+    border-color: $main-red;
+    transition: all .4s ease;
+  }
+  .btn-cta--red:hover {
+    background-color: $main-red-hover;
+    border-color: $main-red-hover;
+  }
+
+}
+
+.section-white {
+  background-color: #fefefe;
+
+  .title {
+    font-size: 36px;
+    font-weight: 900;
+  }
+}
+
+.hero-image {
+  background-size: cover;
+  height: 100vh;
+  // position: relative;
+
+  .hero-heading {
+    font-size: 64px;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    position:absolute;
+    top:50%;
+    text-align:center;
+    width:100%;
+    color:#fff;
+    font-size:36px;
+    transform: translate(0,-50%);
+
+  }
+
+  .header {
+    position: relative;
+  }
+}
+
+#cover {
+  padding-top: 200px;
+  min-height: 600px;
+  width: 100%;
+  background: image-url("4.jpg") no-repeat center center;
+  background-size: 100%;
+  background-size: cover;
+
+  h1 {
+    font-size: 72px;
+    font-weight: 700;
+    color: #fff;
+
+    @include mquery(xs) {
+      font-size: 36px;
+    }
+    @include mquery(sm) {
+      font-size: 48px;
+    }
+    @include mquery(md) {
+      font-size: 72px;
+    }
+  }
+  h2 {
+    font-family: $body-font-stack;
+    color: #fff;
+    font-weight: 300;
+  }
+}
