@@ -10,8 +10,13 @@ class Event < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :history]
 
   has_attached_file :cover,
-                    :styles => { :hero => "960x300#", :thumb => "300x200#" },
-                    :convert_options => { :hero => "-strip", :thumb => "-quality 75 -strip" }, :default_url => "/images/:style/missing.png"
+                    :styles => {
+                      :hero => "1150x420#",
+                      :thumb => "400x300#" },
+                    :convert_options => {
+                      :hero => "-strip",
+                      :thumb => "-quality 95 -strip -gravity center" },
+                    :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :cover, :content_type => /\Aimage\/.*\Z/
   validates_with AttachmentSizeValidator, :attributes => :cover, :less_than => 3.megabytes
 
